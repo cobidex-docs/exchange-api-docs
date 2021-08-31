@@ -1,15 +1,9 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  <a href='https://www.cobidex.com/en_US/'>Cobidex</a>
 
 includes:
   - errors
@@ -18,10 +12,6 @@ search: true
 
 code_clipboard: true
 
-meta:
-  - name: description
-    content: Documentation for the Kittn API
----
 
 # <span id="Introduction">Introduction</span>
 
@@ -160,9 +150,7 @@ REST API
 
 # <span id="b5"> API Reference</span>
 
-##  <span id="b6">open-api</span>
-
-### <span id="1">Balance of assets</span>
+## <span id="1">Balance of assets</span>
 
 1. Interface address: /open/api/user/account
 2. Interface specification: (get request)Balance of the assets
@@ -182,7 +170,7 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	{<br>"total_asset":432323.23,<br>"coin_list":[<br>{"coin":"btc","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>{"coin":"ltc","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>{"coin":"bch","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>]<br>}<br>|total_asset:total assets<br>normal:Balance account<br>locked：Frozen accounts<br>btcValuatin：BTCValuation|
 ---
-### <span id="2">Acquire full delegation</span>
+## <span id="2">Acquire full delegation</span>
 
 1. Interface address:/open/api/v2/all_order
 2. Interface specification:(getrequest)Acquire full delegation
@@ -270,7 +258,7 @@ Return value:
 |usdt|	usdtcny|	-|	-|
 
 ---
-### <span id="3">Obtain all transaction records</span>
+## <span id="3">Obtain all transaction records</span>
 
 1. Interface address:/open/api/all_trade
 2. Interface Description: (get request) Get all transaction records
@@ -358,7 +346,7 @@ Return value:
 
 
 ---
-###  <span id="4">Cancellation of the order</span>
+##  <span id="4">Cancellation of the order</span>
 
 1. Interface address:/open/api/cancel_order
 2. Interface specification:(post Request) Cancellation of the Power of Attorney
@@ -388,7 +376,7 @@ Return value:
 |etc|	etccny|	etcbtc|
 
 ---
-###  <span id="5">Cancellation of all orders of attorney according to currency pair</span>
+##  <span id="5">Cancellation of all orders of attorney according to currency pair</span>
 
 1. Interface address:/open/api/cancel_order_all
 2. Interface specification:(postrequest)Cancellation of all orders of attorney according to currency pair（Up to 2,000 cancellations, more than 2,000 please revoke）
@@ -418,7 +406,7 @@ Return value:
 |etc|	etccny|	etcbtc|
 
 ---
-### <span id="6">Create order</span>
+## <span id="6">Create order</span>
 
 
 1. Interface address:/open/api/create_order
@@ -431,7 +419,7 @@ Return value:
 |volume| 	Must fill|	Purchase quantity（Polysemy, multiplexing fields）<br>type=1:Represents the quantity of sales and purchases<br>type=2:Buy means the total price，Selling represents the total number<br>Trading restrictions user/me-User information|
 |price|	Selective filling|	Authorized unit price：type=2：No need for this parameter|
 |symbol|	Must fill|	Market mark，ethbtc|
-|fee_is_user_exchange_coin|	Selective filling|	（Redundant fields, ignored）0，When the exchange has the platform currency, this parameter indicates whether to use the platform currency to pay the handling fee, 0 no, 1 yes.|
+|fee_is_user_cobidex_coin|	Selective filling|	（Redundant fields, ignored）0，When the cobidex has the platform currency, this parameter indicates whether to use the platform currency to pay the handling fee, 0 no, 1 yes.|
 |api_key|	Must fill|	api_key|
 |time|	Must fill|	time stamp|
 |sign|	Must fill|	autograph|
@@ -453,7 +441,7 @@ Return value:
 |etc|	etccny|	etcbtc|
 
 ---
-###  <span id="7">Get all trading pairs quotations on the market</span>
+##  <span id="7">Get all trading pairs quotations on the market</span>
 1. Interface address:/open/api/get_allticker
 2. Interface specification:(get Request) Get all trading pairs quotations on the market 
 
@@ -527,7 +515,7 @@ Return value:
 ```
 
 ---
-### <span id="8">Getting K-line data</span>
+## <span id="8">Getting K-line data</span>
 
 
 1. Interface address:/open/api/get_records
@@ -588,7 +576,7 @@ Return value:
 
 
 ---
-###  <span id="9">Get the current market quotations</span>
+##  <span id="9">Get the current market quotations</span>
 
 
 1. Interface address:/open/api/get_ticker
@@ -632,7 +620,7 @@ Return value:
 
 
 ---
-### <span id="10">Acquisition of Trading Records</span>
+## <span id="10">Acquisition of Trading Records</span>
 
 1. Interface address:/open/api/get_trades
 2. Interface specification:(get Request) to obtain market transaction records
@@ -692,7 +680,7 @@ Return value:
 
 
 ---
-###  <span id="11">Get the latest transaction price of each pair of currencies</span>
+##  <span id="11">Get the latest transaction price of each pair of currencies</span>
 
 
 1. Interface address:/open/api/market
@@ -722,7 +710,7 @@ Return value:
 
 
 ---
-###  <span id="12">Search the depth of buying and selling</span>
+##  <span id="12">Search the depth of buying and selling</span>
 
 
 1. Interface address:/open/api/market_dept
@@ -767,7 +755,7 @@ Return value:
 
 
 ---
-### <span id="13">Batch order，Simultaneous bulk withdrawal of designated orders</span>
+## <span id="13">Batch order，Simultaneous bulk withdrawal of designated orders</span>
 
 
 1. Interface address:/open/api/mass_replace
@@ -783,7 +771,7 @@ Return value:
 |sign|	Must fill|	autograph|
 |symbol|	Must fill|	currency ，example btcusdt|
 |mass_cancel|	Selective filling|	[1234,234....] Withdrawal parameters，Orderid|
-|mass_place|	Selective filling|	[{side:"BUY",type:"1",volume:"0.01",price:"6400",fee_is_user_exchange_coin:"0"}, {}, …]<br>Meaning：<br>symbol:currency，example btcusdt<br>mass_place:Order parameter。side：direction（Direction of businessBUY、SELL），<br>--------------------------------type：type（1:limit order、2:market order）<br>--------------------------------volume：Purchase quantity（Polysemy，Multiplex field） type=1:Represents the quantity of sales and purchasestype=2:Buy means the total price，Selling represents the total number<br>--------------------------------price：Authorized unit price：type=2：No need for this parameter<br>--------------------------------fee_is_user_exchange_coin：(Redundant fields) When the exchange has a platform currency，This parameter indicates whether to use platform currency to pay handling fee, 0 no, 1 yes.|
+|mass_place|	Selective filling|	[{side:"BUY",type:"1",volume:"0.01",price:"6400",fee_is_user_cobidex_coin:"0"}, {}, …]<br>Meaning：<br>symbol:currency，example btcusdt<br>mass_place:Order parameter。side：direction（Direction of businessBUY、SELL），<br>--------------------------------type：type（1:limit order、2:market order）<br>--------------------------------volume：Purchase quantity（Polysemy，Multiplex field） type=1:Represents the quantity of sales and purchasestype=2:Buy means the total price，Selling represents the total number<br>--------------------------------price：Authorized unit price：type=2：No need for this parameter<br>--------------------------------fee_is_user_cobidex_coin：(Redundant fields) When the cobidex has a platform currency，This parameter indicates whether to use platform currency to pay handling fee, 0 no, 1 yes.|
 
 Return value:
 
@@ -796,7 +784,7 @@ Return value:
 
 
 ---
-### <span id="27">Place orders in batches and withdraw designated orders in batches - V2</span>
+## <span id="27">Place orders in batches and withdraw designated orders in batches - V2</span>
 
 1. Interface address:/open/api/mass_replaceV2
 2. Interface specification:(postrequest)Place orders in batches and withdraw designated orders in batches
@@ -811,7 +799,7 @@ Return value:
 |sign|	Must fill|	autograph|
 |symbol|	Must fill|	currency ，example btcusdt|
 |mass_cancel|	Selective filling|	[1234,234....] Withdrawal parameters，Orderid|
-|mass_place|	Selective filling|	[{side:"BUY",type:"1",volume:"0.01",price:"6400",fee_is_user_exchange_coin:"0"}, {}, …]<br>Meaning：<br>symbol:currency，example btcusdt<br>mass_place:Order parameter。side：direction（Direction of businessBUY、SELL），<br>--------------------------------type：type（1:limit order、2:market order）<br>--------------------------------volume：Purchase quantity（Polysemy，Multiplex field） type=1:Represents the quantity of sales and purchasestype=2:Buy means the total price，Selling represents the total number<br>--------------------------------price：Authorized unit price：type=2：No need for this parameter<br>--------------------------------fee_is_user_exchange_coin：(Redundant fields) When the exchange has a platform currency，This parameter indicates whether to use platform currency to pay handling fee, 0 no, 1 yes.|
+|mass_place|	Selective filling|	[{side:"BUY",type:"1",volume:"0.01",price:"6400",fee_is_user_cobidex_coin:"0"}, {}, …]<br>Meaning：<br>symbol:currency，example btcusdt<br>mass_place:Order parameter。side：direction（Direction of businessBUY、SELL），<br>--------------------------------type：type（1:limit order、2:market order）<br>--------------------------------volume：Purchase quantity（Polysemy，Multiplex field） type=1:Represents the quantity of sales and purchasestype=2:Buy means the total price，Selling represents the total number<br>--------------------------------price：Authorized unit price：type=2：No need for this parameter<br>--------------------------------fee_is_user_cobidex_coin：(Redundant fields) When the cobidex has a platform currency，This parameter indicates whether to use platform currency to pay handling fee, 0 no, 1 yes.|
 
 Return value:
 
@@ -823,7 +811,7 @@ Return value:
 
 
 ---
-### <span id="14">Get the current delegation</span>
+## <span id="14">Get the current delegation</span>
 
 
 1. Interface address:/open/api/v2/new_order
@@ -906,7 +894,7 @@ Return value:
 
 
 ---
-###  <span id="15">Obtain order details</span>
+##  <span id="15">Obtain order details</span>
 
 1. Interface address:/open/api/order_info
 2. Interface specification:(getrequest)Obtain order details
@@ -967,7 +955,7 @@ Return value:
 
 
 ---
-### <span id="17">All Transaction Pairs and Accuracy Supported by Query System</span>
+## <span id="17">All Transaction Pairs and Accuracy Supported by Query System</span>
 
 
 1. Interface address:/open/api/common/symbols
@@ -1035,7 +1023,7 @@ Return value:
 
 
 ---
-###  <span id="18">Get user assets and recharge records</span>
+##  <span id="18">Get user assets and recharge records</span>
 
 
 1. Interface address:/open/api/user_balance_info
@@ -1079,7 +1067,7 @@ Return value:
 
 
 ---
-###  <span id="19">Subscription - K Line Market</span>
+##  <span id="19">Subscription - K Line Market</span>
 
 * request:
 ```
@@ -1109,7 +1097,7 @@ Return value:
 
 
 ---
-### <span id="20">Subscription - market quotations in the last 24 hours</span>
+## <span id="20">Subscription - market quotations in the last 24 hours</span>
 
 
 * request:
@@ -1143,7 +1131,7 @@ Return value:
 
 
 ---
-###  <span id="21">Subscription - Deep Port (High Frequency)</span>
+##  <span id="21">Subscription - Deep Port (High Frequency)</span>
 
 
 * request:
@@ -1192,7 +1180,7 @@ Return value:
 
 
 ---
-###  <span id="22">Subscription - Deep Port</span>
+##  <span id="22">Subscription - Deep Port</span>
 
 * request:
 ```
@@ -1221,7 +1209,7 @@ Return value:
 ```
 
 ---
-### <span id="23">Subscription-Real-time Transaction Information </span>
+## <span id="23">Subscription-Real-time Transaction Information </span>
 
 * request:
 ```
@@ -1266,7 +1254,7 @@ Return value:
 
 
 ---
-### <span id="24">Request-K Line History Data</span>
+## <span id="24">Request-K Line History Data</span>
 
 * Increase request parameters endIdx，pageSize（Up to 300, default 300 data）,If endIdx is empty, the last 300 historical data are returned
 
@@ -1306,7 +1294,7 @@ Return value:
 
 
 ---
-### <span id="25">Request-transaction history data </span>
+## <span id="25">Request-transaction history data </span>
 
 * request:
 ```
@@ -1341,7 +1329,7 @@ Return value:
 
 
 ---
-### <span id="26">Request - 24 Market Data on Home Page-</span>
+## <span id="26">Request - 24 Market Data on Home Page-</span>
 
 * Request mode:
 ```
@@ -1361,7 +1349,7 @@ Return value:
 ```
 
 ---
-## <span id="ws-api-java">ws-api Demo (java) </span>
+# <span id="ws-api-java">ws-api Demo (java) </span>
 
 
 ```
@@ -1407,7 +1395,7 @@ public class WsTest {
     public static void main(String[] args) {
         try {
 //wsurl 
-            String url = "wss://ws.Exchange.com/kline-api/ws";
+            String url = "wss://ws.cobidex.com/kline-api/ws";
 //Historical data request parameters 
             String reqParam = "{"event":"req","params":{"channel":"market_btcusdt_trade_ticker","cb_id":"btcusdt","top":150}}";
 //Subscription parameters 
@@ -1419,7 +1407,7 @@ public class WsTest {
 //Subscribe to real-time data 
             wsc.send(subParam);
 
-//Thread does not end, waiting for new messages，www.Exchange.com Generally, a new deal will return in about a minute
+//Thread does not end, waiting for new messages，https://www.cobidex.com/en_US/ Generally, a new deal will return in about a minute
             while (true) {
                 Thread.sleep(1000);
             }
