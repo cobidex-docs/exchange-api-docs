@@ -1,8 +1,23 @@
-## Welcome to GitHub Pages
+---
+title: API Reference
 
-You can use the [editor on GitHub](https://github.com/darico-docs/cobidex-api-docs-/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
+toc_footers:
+  - <a href='https://www.cobidex.com/en_US/'>Cobidex</a>
+
+
+search: true
+
+code_clipboard: true
+---
+
+## Cobidex-official-API-docs
+
+
+Welcome to [Cobidex](https://www.darico.io) API document for developers.
+
+This file provides the related API application introduction. Open-API includes the port to acquire balance, all orders ,and all transaction record. Ws-API response for the port of K line functions..
 
 ### Markdown
 
