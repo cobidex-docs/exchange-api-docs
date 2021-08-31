@@ -2,15 +2,15 @@
 title: API Reference
 
 
-toc_footers:
-  -<a href='https://www.cobidex.com/en_US/'>Cobidex</a>
 
-includes:
-  - errors
+toc_footers:
+  - <a href='https://www.cobidex.com/en_US/'>Cobidex</a>
+
 
 search: true
 
 code_clipboard: true
+---
 
 
 # <span id="Introduction">Introduction</span>
