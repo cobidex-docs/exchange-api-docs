@@ -19,7 +19,6 @@ Welcome to [Cobidex](https://www.cobidex.com/en_US/) API document for developers
 
 This file provides the related API application introduction. Open-API includes the port to acquire balance, all orders ,and all transaction record. Ws-API response for the port of K line functions.
 
----
 
 # <span id="startToUse">Getting Started</span>
 REST, a.k.a Respresntational State Transfer, is an architectural style that defines a set of constraints and properties based on HTTP. REST is known for its clear structure, readability, standardization and scalability. Its advantages are as follows:
@@ -30,7 +29,6 @@ REST, a.k.a Respresntational State Transfer, is an architectural style that defi
 
 Developers are recommended to use REST API to proceed spot trading and withdrawals.
 
----
 
 
 # <span id="a1">Encrypted Verification of API</span>
@@ -146,7 +144,6 @@ REST API
 
 - Special restrictions on specified interfaces are specified.
 
----
 
 # <span id="b5"> API Reference</span>
 
@@ -169,7 +166,7 @@ Return value:
 |code|	0|	 |
 |msg|	"suc"|	code>0fail|
 |data|	{<br>"total_asset":432323.23,<br>"coin_list":[<br>{"coin":"btc","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>{"coin":"ltc","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>{"coin":"bch","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>]<br>}<br>|total_asset:total assets<br>normal:Balance account<br>locked：Frozen accounts<br>btcValuatin：BTCValuation|
----
+
 ## <span id="2">Acquire full delegation</span>
 
 1. Interface address:/open/api/v2/all_order
@@ -181,7 +178,7 @@ Return value:
 
 * v2Version change: Remove from the result return value tradeListTransaction record,Enhance efficiency;If transaction information for a single order is required
 
-,you can use /open/api/order_info interface and check it
+you can use /open/api/order_info interface and check it
 
 |parameter|	Fill in type|	Explain|
 |------------|--------|-----------------------------|
@@ -257,7 +254,7 @@ Return value:
 |etc|	etccny|	etcbtc|	etcusdt|
 |usdt|	usdtcny|	-|	-|
 
----
+
 ## <span id="3">Obtain all transaction records</span>
 
 1. Interface address:/open/api/all_trade
@@ -345,7 +342,7 @@ Return value:
 |usdt|	usdtcny|	-|	-|
 
 
----
+
 ##  <span id="4">Cancellation of the order</span>
 
 1. Interface address:/open/api/cancel_order
@@ -375,7 +372,7 @@ Return value:
 |bcc|	bcccny|	bccbtc|
 |etc|	etccny|	etcbtc|
 
----
+
 ##  <span id="5">Cancellation of all orders of attorney according to currency pair</span>
 
 1. Interface address:/open/api/cancel_order_all
@@ -405,7 +402,7 @@ Return value:
 |bcc|	bcccny|	bccbtc|
 |etc|	etccny|	etcbtc|
 
----
+
 ## <span id="6">Create order</span>
 
 
@@ -440,7 +437,7 @@ Return value:
 |bcc|	bcccny|	bccbtc|
 |etc|	etccny|	etcbtc|
 
----
+
 ##  <span id="7">Get all trading pairs quotations on the market</span>
 1. Interface address:/open/api/get_allticker
 2. Interface specification:(get Request) Get all trading pairs quotations on the market 
@@ -514,7 +511,7 @@ Return value:
  }
 ```
 
----
+
 ## <span id="8">Getting K-line data</span>
 
 
@@ -575,7 +572,7 @@ Return value:
 ```
 
 
----
+
 ##  <span id="9">Get the current market quotations</span>
 
 
@@ -619,7 +616,7 @@ Return value:
 
 
 
----
+
 ## <span id="10">Acquisition of Trading Records</span>
 
 1. Interface address:/open/api/get_trades
@@ -679,7 +676,7 @@ Return value:
 
 
 
----
+
 ##  <span id="11">Get the latest transaction price of each pair of currencies</span>
 
 
@@ -709,7 +706,7 @@ Return value:
 |etc|	etccny|	etcbtc|	etcusdt|
 
 
----
+
 ##  <span id="12">Search the depth of buying and selling</span>
 
 
@@ -754,7 +751,7 @@ Return value:
 
 
 
----
+
 ## <span id="13">Batch order，Simultaneous bulk withdrawal of designated orders</span>
 
 
@@ -783,7 +780,7 @@ Return value:
 
 
 
----
+
 ## <span id="27">Place orders in batches and withdraw designated orders in batches - V2</span>
 
 1. Interface address:/open/api/mass_replaceV2
@@ -810,7 +807,7 @@ Return value:
 |data|	"mass_place": [{"msg": "Success","code": "0","order_id": [504,505]},{"msg": "Order cancellation failed","code": "8","order_id": [504,505]}]<br>"mass_cancel": [{"msg": "Success","code": "0","order_id": [572,573,574,626,629]}]|Order return：Orderid，Status code，Success or Failure Information。<br>Withdrawal of returns：Orderid，Status code，c<br>0Express success。|
 
 
----
+
 ## <span id="14">Get the current delegation</span>
 
 
@@ -893,7 +890,6 @@ Return value:
 
 
 
----
 ##  <span id="15">Obtain order details</span>
 
 1. Interface address:/open/api/order_info
@@ -954,7 +950,6 @@ Return value:
 
 
 
----
 ## <span id="17">All Transaction Pairs and Accuracy Supported by Query System</span>
 
 
@@ -1022,7 +1017,6 @@ Return value:
 ```
 
 
----
 ##  <span id="18">Get user assets and recharge records</span>
 
 
@@ -1066,7 +1060,6 @@ Return value:
 ```
 
 
----
 ##  <span id="19">Subscription - K Line Market</span>
 
 * request:
@@ -1096,7 +1089,6 @@ Return value:
 ```
 
 
----
 ## <span id="20">Subscription - market quotations in the last 24 hours</span>
 
 
@@ -1130,7 +1122,6 @@ Return value:
 ```
 
 
----
 ##  <span id="21">Subscription - Deep Port (High Frequency)</span>
 
 
@@ -1179,7 +1170,6 @@ Return value:
 ```
 
 
----
 ##  <span id="22">Subscription - Deep Port</span>
 
 * request:
@@ -1208,7 +1198,6 @@ Return value:
 }
 ```
 
----
 ## <span id="23">Subscription-Real-time Transaction Information </span>
 
 * request:
@@ -1253,7 +1242,6 @@ Return value:
 
 
 
----
 ## <span id="24">Request-K Line History Data</span>
 
 * Increase request parameters endIdx，pageSize（Up to 300, default 300 data）,If endIdx is empty, the last 300 historical data are returned
@@ -1293,7 +1281,6 @@ Return value:
 
 
 
----
 ## <span id="25">Request-transaction history data </span>
 
 * request:
@@ -1328,7 +1315,6 @@ Return value:
 ```
 
 
----
 ## <span id="26">Request - 24 Market Data on Home Page-</span>
 
 * Request mode:
@@ -1348,7 +1334,7 @@ Return value:
 }
 ```
 
----
+
 # <span id="ws-api-java">ws-api Demo (java) </span>
 
 
