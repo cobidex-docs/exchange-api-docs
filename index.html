@@ -429,8 +429,6 @@
 <p>Welcome to <a href="https://www.cobidex.com/en_US/">Cobidex</a> API document for developers.</p>
 
 <p>This file provides the related API application introduction. Open-API includes the port to acquire balance, all orders ,and all transaction record. Ws-API response for the port of K line functions.</p>
-
-<hr>
 <h1 id='getting-started'><span id="startToUse">Getting Started</span></h1>
 <p>REST, a.k.a Respresntational State Transfer, is an architectural style that defines a set of constraints and properties based on HTTP. REST is known for its clear structure, readability, standardization and scalability. Its advantages are as follows:</p>
 
@@ -441,8 +439,6 @@
 </ul>
 
 <p>Developers are recommended to use REST API to proceed spot trading and withdrawals.</p>
-
-<hr>
 <h1 id='encrypted-verification-of-api'><span id="a1">Encrypted Verification of API</span></h1><h2 id='generate-an-api-key'><span id="a2">Generate an API Key</span></h2>
 <p>Before signing any request, you must generate an API key via <a href="https://www.cobidex.com/en_US/">Cobidex’s official website </a>【User Center】-【API】. After generating the key, there are three things you must bear in mind:</p>
 
@@ -537,8 +533,6 @@
 <li><p>Private interface: We limit the invocation of private interface via user ID: up to 6 requests every 2s.</p></li>
 <li><p>Special restrictions on specified interfaces are specified.</p></li>
 </ul>
-
-<hr>
 <h1 id='api-reference'><span id="b5"> API Reference</span></h1><h2 id='balance-of-assets'><span id="1">Balance of assets</span></h2>
 <ol>
 <li>Interface address: /open/api/user/account</li>
@@ -594,8 +588,6 @@
 <td>total_asset:total assets<br>normal:Balance account<br>locked：Frozen accounts<br>btcValuatin：BTCValuation</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='acquire-full-delegation'><span id="2">Acquire full delegation</span></h2>
 <ol>
 <li>Interface address:/open/api/v2/all_order</li>
@@ -609,7 +601,7 @@
 <li><p>v2Version change: Remove from the result return value tradeListTransaction record,Enhance efficiency;If transaction information for a single order is required</p></li>
 </ul>
 
-<p>,you can use /open/api/order_info interface and check it</p>
+<p>you can use /open/api/order_info interface and check it</p>
 
 <table><thead>
 <tr>
@@ -774,8 +766,6 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='obtain-all-transaction-records'><span id="3">Obtain all transaction records</span></h2>
 <ol>
 <li>Interface address:/open/api/all_trade</li>
@@ -958,8 +948,6 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='cancellation-of-the-order'><span id="4">Cancellation of the order</span></h2>
 <ol>
 <li>Interface address:/open/api/cancel_order</li>
@@ -1059,8 +1047,6 @@
 <td>etcbtc</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='cancellation-of-all-orders-of-attorney-according-to-currency-pair'><span id="5">Cancellation of all orders of attorney according to currency pair</span></h2>
 <ol>
 <li>Interface address:/open/api/cancel_order_all</li>
@@ -1155,8 +1141,6 @@
 <td>etcbtc</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='create-order'><span id="6">Create order</span></h2>
 <ol>
 <li>Interface address:/open/api/create_order</li>
@@ -1276,8 +1260,6 @@
 <td>etcbtc</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='get-all-trading-pairs-quotations-on-the-market'><span id="7">Get all trading pairs quotations on the market</span></h2>
 <ol>
 <li>Interface address:/open/api/get_allticker</li>
@@ -1370,9 +1352,7 @@
      }
    ]
  }
-</code></pre></div>
-<hr>
-<h2 id='getting-k-line-data'><span id="8">Getting K-line data</span></h2>
+</code></pre></div><h2 id='getting-k-line-data'><span id="8">Getting K-line data</span></h2>
 <ol>
 <li>Interface address:/open/api/get_records</li>
 <li>Interface specification:(get request)Getting K-line data</li>
@@ -1493,9 +1473,7 @@
             0
         ]
 ]
-</code></pre></div>
-<hr>
-<h2 id='get-the-current-market-quotations'><span id="9">Get the current market quotations</span></h2>
+</code></pre></div><h2 id='get-the-current-market-quotations'><span id="9">Get the current market quotations</span></h2>
 <ol>
 <li>Interface address:/open/api/get_ticker</li>
 <li>Interface specification:(get Request) to get the current market quotations </li>
@@ -1594,8 +1572,6 @@
 <td>ltcusdt</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='acquisition-of-trading-records'><span id="10">Acquisition of Trading Records</span></h2>
 <ol>
 <li>Interface address:/open/api/get_trades</li>
@@ -1711,8 +1687,6 @@
 <td>ltcusdt</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='get-the-latest-transaction-price-of-each-pair-of-currencies'><span id="11">Get the latest transaction price of each pair of currencies</span></h2>
 <ol>
 <li>Interface address:/open/api/market</li>
@@ -1808,8 +1782,6 @@
 <td>etcusdt</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='search-the-depth-of-buying-and-selling'><span id="12">Search the depth of buying and selling</span></h2>
 <ol>
 <li>Interface address:/open/api/market_dept</li>
@@ -1882,9 +1854,7 @@
         ]
     }
 }
-</code></pre></div>
-<hr>
-<h2 id='batch-order-simultaneous-bulk-withdrawal-of-designated-orders'><span id="13">Batch order，Simultaneous bulk withdrawal of designated orders</span></h2>
+</code></pre></div><h2 id='batch-order-simultaneous-bulk-withdrawal-of-designated-orders'><span id="13">Batch order，Simultaneous bulk withdrawal of designated orders</span></h2>
 <ol>
 <li>Interface address:/open/api/mass_replace</li>
 <li>Interface specification:(postrequest)Place orders in batches and withdraw designated orders in batches</li>
@@ -1959,8 +1929,6 @@
 <td>Order return：Orderid，Status code，Success or Failure Information。<br>Withdrawal of returns：Orderid，Status code，c<br>0Express success。</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='place-orders-in-batches-and-withdraw-designated-orders-in-batches-v2'><span id="27">Place orders in batches and withdraw designated orders in batches - V2</span></h2>
 <ol>
 <li>Interface address:/open/api/mass_replaceV2</li>
@@ -2036,8 +2004,6 @@
 <td>Order return：Orderid，Status code，Success or Failure Information。<br>Withdrawal of returns：Orderid，Status code，c<br>0Express success。</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='get-the-current-delegation'><span id="14">Get the current delegation</span></h2>
 <ol>
 <li>Interface address:/open/api/v2/new_order</li>
@@ -2202,8 +2168,6 @@
 <td>-/web/new_order-Get the current delegate</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h2 id='obtain-order-details'><span id="15">Obtain order details</span></h2>
 <ol>
 <li>Interface address:/open/api/order_info</li>
@@ -2301,9 +2265,7 @@
         }
     ]
 }
-</code></pre></div>
-<hr>
-<h2 id='all-transaction-pairs-and-accuracy-supported-by-query-system'><span id="17">All Transaction Pairs and Accuracy Supported by Query System</span></h2>
+</code></pre></div><h2 id='all-transaction-pairs-and-accuracy-supported-by-query-system'><span id="17">All Transaction Pairs and Accuracy Supported by Query System</span></h2>
 <ol>
 <li>Interface address:/open/api/common/symbols</li>
 <li>Interface specification:(get request) query all transaction pairs and accuracy supported by the system</li>
@@ -2386,9 +2348,7 @@
 }
 ]
 }
-</code></pre></div>
-<hr>
-<h2 id='get-user-assets-and-recharge-records'><span id="18">Get user assets and recharge records</span></h2>
+</code></pre></div><h2 id='get-user-assets-and-recharge-records'><span id="18">Get user assets and recharge records</span></h2>
 <ol>
 <li>Interface address:/open/api/user_balance_info</li>
 <li>Interface Description:(postRequest) Get user assets and recharge records</li>
@@ -2475,9 +2435,7 @@
     },...
 ]
 }
-</code></pre></div>
-<hr>
-<h2 id='subscription-k-line-market'><span id="19">Subscription - K Line Market</span></h2>
+</code></pre></div><h2 id='subscription-k-line-market'><span id="19">Subscription - K Line Market</span></h2>
 <ul>
 <li>request:
 <code>
@@ -2505,8 +2463,6 @@
 }
 ```</p></li>
 </ul>
-
-<hr>
 <h2 id='subscription-market-quotations-in-the-last-24-hours'><span id="20">Subscription - market quotations in the last 24 hours</span></h2>
 <ul>
 <li>request:
@@ -2536,8 +2492,6 @@
     }
 }
 ```</p>
-
-<hr>
 <h2 id='subscription-deep-port-high-frequency'><span id="21">Subscription - Deep Port (High Frequency)</span></h2>
 <ul>
 <li>request:
@@ -2580,8 +2534,6 @@
 }
 </code></p></li>
 </ul>
-
-<hr>
 <h2 id='subscription-deep-port'><span id="22">Subscription - Deep Port</span></h2>
 <ul>
 <li>request:
@@ -2610,8 +2562,6 @@
 }
 </code></li>
 </ul>
-
-<hr>
 <h2 id='subscription-real-time-transaction-information'><span id="23">Subscription-Real-time Transaction Information </span></h2>
 <ul>
 <li>request:
@@ -2654,8 +2604,6 @@
 }
 </code></li>
 </ul>
-
-<hr>
 <h2 id='request-k-line-history-data'><span id="24">Request-K Line History Data</span></h2>
 <ul>
 <li><p>Increase request parameters endIdx，pageSize（Up to 300, default 300 data）,If endIdx is empty, the last 300 historical data are returned</p></li>
@@ -2692,8 +2640,6 @@
 }
 ```</p></li>
 </ul>
-
-<hr>
 <h2 id='request-transaction-history-data'><span id="25">Request-transaction history data </span></h2>
 <ul>
 <li>request:
@@ -2727,8 +2673,6 @@
 }
 </code></li>
 </ul>
-
-<hr>
 <h2 id='request-24-market-data-on-home-page'><span id="26">Request - 24 Market Data on Home Page-</span></h2>
 <ul>
 <li>Request mode:
@@ -2748,8 +2692,6 @@ data: {
 }
 </code></li>
 </ul>
-
-<hr>
 <h1 id='ws-api-demo-java'><span id="ws-api-java">ws-api Demo (java) </span></h1><div class="highlight"><pre class="highlight mosel"><code>
 <span class="k">package</span> <span class="n">test</span><span class="p">;</span>
 
