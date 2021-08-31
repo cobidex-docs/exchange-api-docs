@@ -3,7 +3,7 @@ title: API Reference
 
 
 toc_footers:
-  <a href='https://www.cobidex.com/en_US/'>Cobidex</a>
+  -<a href='https://www.cobidex.com/en_US/'>Cobidex</a>
 
 includes:
   - errors
