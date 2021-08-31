@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Documentation</title>
+    <title>API Reference</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -284,8 +284,11 @@
     </style>
     <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch-18c3ed8e.js"></script>
+      <script src="javascripts/all-b12a2749.js"></script>
 
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
   </head>
 
   <body class="index" data-languages="[]">
@@ -297,7 +300,14 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo-bda341c4.png" class="logo" alt="" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction"><span id="Introduction">Introduction</span></a>
+          </li>
           <li>
             <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started"><span id="startToUse">Getting Started</span></a>
           </li>
@@ -408,11 +418,20 @@
             <a href="#ws-api-demo-java" class="toc-h1 toc-link" data-title="ws-api Demo (java) "><span id="ws-api-java">ws-api Demo (java) </span></a>
           </li>
       </ul>
+        <ul class="toc-footer">
+            <li><a href='https://www.cobidex.com/en_US/'>Cobidex</a></li>
+        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='getting-started'><span id="startToUse">Getting Started</span></h1>
+        <h1 id='introduction'><span id="Introduction">Introduction</span></h1>
+<p>Welcome to <a href="https://www.cobidex.com/en_US/">Cobidex</a> API document for developers.</p>
+
+<p>This file provides the related API application introduction. Open-API includes the port to acquire balance, all orders ,and all transaction record. Ws-API response for the port of K line functions.</p>
+
+<hr>
+<h1 id='getting-started'><span id="startToUse">Getting Started</span></h1>
 <p>REST, a.k.a Respresntational State Transfer, is an architectural style that defines a set of constraints and properties based on HTTP. REST is known for its clear structure, readability, standardization and scalability. Its advantages are as follows:</p>
 
 <ul>
