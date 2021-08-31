@@ -199,7 +199,7 @@ Return value:
 |code|	0|	 |
 |msg|	"suc"|	code>0fail|
 |data|	as follows:|
-```
+```ruby
 {
     "count":10,
     "orderList":[
@@ -279,7 +279,7 @@ Return value:
 |code|	0|	 |
 |msg|	"suc"|	code>0fail|
 | data|	as follows:|
-```
+```ruby
 {
     "count":22,
     "resultList":[
@@ -450,7 +450,7 @@ Return value:
 |code|	0|	 
 |msg|	"suc"|	code>0fail|
 |data|	as follows：|Return Value Description<br>date: Server time when data is returned <br>symbol: Transaction pairs（Transaction pairs1(base)Abbreviation_Transaction pairs2(quote)Abbreviation） <br>buy: Buy one price <br>high: Highest price <br>last: Latest Transaction Price <br>low: Minimum price <br>sell: Selling price <br>vol: Volume (latest 24 hours)<br>rose:Ups and downs|
-```
+```ruby
 {
    "date": 1534335607859,
    "ticker": [
@@ -541,7 +541,7 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	as follows：|
 
-```
+```ruby
 [
         [
             1514445780,  //time stamp
@@ -592,7 +592,7 @@ Return value:
 |code|	0	| 
 |msg|	"suc"|	code>0fail|
 |data|	as follows：|
-```
+```ruby
 {
     "high": 1,//Maximum value
     "vol": 10232.26315789,//Trading volume
@@ -635,7 +635,7 @@ Return value:
 |code|	0	| 
 |msg|	"suc"|	code>0fail|
 |data|	as follows：|
-```
+```ruby
 [
         {
             "amount": 0.55,//volume
@@ -727,7 +727,7 @@ Return value:
 |code|	0|	 
 |msg|	"suc"|	code>0fail|
 |data|	as follows：|
-```
+```ruby
 {  
     "tick":{
         "asks":[//Selling
@@ -834,7 +834,7 @@ Return value:
 |code|	0|	 
 |msg|	"suc"|	code>0fail|
 |data|	as follows:|Order status(status)Explain：<br>INIT(0,"Initial order，No deal has not entered the handicap"),<br>NEW_(1,"New order，Unfinished business enters the market"),<br>FILLED(2,"Full deal"),<br>PART_FILLED(3,"Partial transaction"),<br>CANCELED(4,"Withdrawal of documents"),<br>PENDING_CANCEL(5,"Withdrawal of order"),<br>EXPIRED(6,"Abnormal order");|
-```
+```javascript
 {
     "count":10,
     "resultList":[
@@ -910,7 +910,7 @@ Return value:
 |code|	0|	 
 |msg|	"suc"|	code>0fail|
 |data|	as follows:|
-```
+```javascript
 {
     "order_info":{
         "id":343,
@@ -965,7 +965,7 @@ Return value:
 |code|	0|	 
 |msg|	"suc"|	code>0fail|
 |data|	as follows：|symbol Transaction pairs<br>base_coin Base currency<br>count_coin Money of Account<br>price_precision Price Precision Number（0 is a single digit）<br>amount_precision Quantitative precision digits (0 is a single digit)|
-```
+```javascript
 {
 "code": "0",
 "msg": "suc",
@@ -1039,7 +1039,7 @@ Return value:
 |code|	0|“0” - > Success<br>“100004” ->Illegal parameters<br>“100005” -> Signature error<br>“100007” -> illegalIP<br>"110032" -> Users do not have query privileges<br>“110020” -> The user to query does not exist|
 |msg|	"suc"|	code>0fail|
 |data|	as follows：|balance_info Asset information in various currencies<br>deposit_list Filling Pipeline Information|
-```
+```javascript
 {
 "balance_info":[
     {
