@@ -1619,7 +1619,7 @@ timezone | string | China standard time | server time zone
 
 ### Contract List
 
-**Get** https://cobidexopenapi.xxx.com /fapi/v1/contracts
+**GET** https://cobidexopenapi.xxx.com /fapi/v1/contracts
 
 **Response**
 
@@ -1669,7 +1669,7 @@ Market section can be accessed freely without requiring any API-key or signature
 
 ### Depth
 
-**Get** https://cobidexopenapi.xxx.com /fapi/v1/depth
+**GET** https://cobidexopenapi.xxx.com /fapi/v1/depth
 
 **Market depth data**
 
@@ -1766,7 +1766,7 @@ rose | string | +0.5 | Price variation
 
 ### Get index/marked price
 
-**Get** https://cobidexopenapi.xxx.com /fapi/v1/index
+**GET** https://cobidexopenapi.xxx.com /fapi/v1/index
 
 **Request**
 
@@ -1799,7 +1799,7 @@ lastFundingRate | float | 0.123 | Current fund rate
 
 ### K line/charts data
 
-https://cobidexopenapi.xxx.com /fapi/v1/klines
+**GET** https://cobidexopenapi.xxx.com /fapi/v1/klines
 
 **Request**
 
@@ -1854,3 +1854,500 @@ vol | float | 2456.111 | Trade volume
 
 ## Trading
 
+### Security: TRADE
+
+All interfaces under the transaction require signature and API-key verification
+
+### Order creation
+
+**POST** https://cobidexopenapi.xxx.com /fapi/v1/order
+
+**Request**
+
+Query Parameters
+
+ContractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC-USDT
+-------------- | -------------- | --------------
+**interval** <span id="reqd">REQUIRED</span> | **string** | **K-line interval, identifies the sent value as:** <br/> **1min,5min,15min,30min,1h,1day,1week,1month**
+**limit** <span id="opt">OPTIONAL</span> | **integer** | **Default 100, Max 300**
+
+**Response:**
+
+200: OK
+
+```javascript
+[
+    {
+        "high": "6228.77",
+        "vol": "111",
+        "low": "6228.77",
+        "idx": 1594640340,
+        "close": "6228.77",
+        "open": "6228.77"
+    },
+    {
+        "high": "6228.77",
+        "vol": "222",
+        "low": "6228.77",
+        "idx": 1587632160,
+        "close": "6228.77",
+        "open": "6228.77"
+    },
+    {
+        "high": "6228.77",
+        "vol": "333",
+        "low": "6228.77",
+        "idx": 1587632100,
+        "close": "6228.77",
+        "open": "6228.77"
+    }
+]
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+idx | long | 1538728740000 | Start timestamp (ms）
+open | float | 36.00000 | Open price
+close | float | 33.00000 | Closing price
+high | float | 36.00000 | Max price
+low | float | 30.00000 | Min price
+vol | float | 2456.111 | Trade volume
+
+## Trading
+
+### Security: TRADE
+
+All interfaces under the transaction require signature and API-key verification
+
+### Order creation
+
+**POST** https://cobidexopenapi.xxx.com /fapi/v1/order
+
+Creation of single new orders
+
+**Request**
+
+Headers
+
+X-CH-TS <span id="opt">OPTIONAL</span> | string | Time stamp
+-------------- | -------------- | --------------
+**X-CH-APIKEY** <span id="opt">OPTIONAL</span> | **string** | **Your API-key**
+**X-CH-SIGN** <span id="opt">OPTIONAL</span> | **string** | **Signature**
+
+Body Parameters
+
+**volume** <span id="reqd">REQUIRED</span> | **number** | **Order quantity**
+-------------- | -------------- | --------------
+**price** <span id="reqd">REQUIRED</span> | **number** | **Order price**
+**ContractName** <span id="reqd">REQUIRED</span> | **string** | **Contract name E.g. E-BTC-USDT**
+**type** <span id="reqd">REQUIRED</span> | **string** | **Order type, LIMIT/MARKET**
+**side** <span id="reqd">REQUIRED</span>  | **string** | **trade direction, BUY/SELL**
+**open** <span id="reqd">REQUIRED</span> | **string** | **Open balancing direction, OPEN/CLOSE**
+**position Type** <span id="reqd">REQUIRED</span> | **number** | **Hold-up position, 1 full position, 2 restrictive position**
+**clientOrderId** <span id="opt">OPTIONAL</span> | **string** | **Client order identity, a string with length less than 32 bit**
+**timeInForce** <span id="opt">OPTIONAL</span> | **string** | **IOC, FOK, POST_ONLY**
+
+**Response:**
+
+200: OK
+
+```javascript
+{
+    "orderId": 256609229205684228
+}
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+orderId | String | 256609229205684228 | Order ID
+
+### Cancel order
+
+**POST** https://cobidexopenapi.xxx.com /fapi/v1/cancel
+
+Speed limit rules: 20 times/ 2 seconds
+
+Headers
+
+**X-CH-SIGN** <span id="reqd">REQUIRED</span> | **string** | **Signature**
+-------------- | -------------- | --------------
+**X-CH-APIKEY** <span id="reqd">REQUIRED</span> | **string** | **Your API-key**
+**X-CH-TS** <span id="reqd">REQUIRED</span> | **integer** | **Time stamp**
+
+Body Parameters
+
+**contractName** <span id="reqd">REQUIRED</span> | **string** | **Contract name E.g. E-BTC-USDT**
+-------------- | -------------- | --------------
+**orderId** <span id="reqd">REQUIRED</span> | **string** | **Order ID**
+
+
+**Response:**
+
+200: OK
+
+```javascript
+{
+    "orderId": 256609229205684228
+}
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+orderId | String | 256609229205684228 | Order ID
+
+### Cancel order
+
+**POST** https://cobidexopenapi.xxx.com /fapi/v1/cancel
+
+Speed limit rules: 20 times/ 2 seconds
+
+**Request**
+
+Headers
+
+X-CH-SIGN <span id="reqd">REQUIRED</span> | string | Signature
+-------------- | -------------- | --------------
+**X-CH-APIKEY** <span id="reqd">REQUIRED</span> | **string** | **Your API-key**
+**X-CH-TS** <span id="reqd">REQUIRED</span> | **integer** | **Time stamp**
+
+Body Parameters
+
+contractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC-USDT
+-------------- | -------------- | --------------
+**orderId** <span id="reqd">REQUIRED</span> | **string** | **Order ID**
+
+**Response:**
+
+200: OK
+
+```javascript
+{
+    "orderId": 256609229205684228
+}
+```
+
+### Order details
+
+**GET** https://cobidexopenapi.xxx.com /fapi/v1/order
+
+
+**Request**
+
+Headers
+
+contractName <span id="reqd">REQUIRED</span> | string 
+-------------- | --------------
+
+
+**Response:**
+
+200: OK
+
+```javascript
+[
+    {
+       "side": "BUY",
+       "executedQty": 0,
+       "orderId": 259396989397942275,
+       "price": 10000.0000000000000000,
+       "origQty": 1.0000000000000000,
+       "avgPrice": 0E-8,
+       "transactTime": "1607702400000",
+       "action": "OPEN",
+       "contractName": "E-BTC-USDT",
+       "type": "LIMIT",
+       "status": "INIT"
+    }
+]
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+orderId | long | 150695552109032492 | Order ID（system generated
+contractName | string | E-BTC-USDT | Contract name
+price | float | 10.5 | Order price
+origQty | float | 10.5 | Order quantity
+executedQty | float | 20 | Order quantity
+avgPrice | float | 10.5 | Average transaction price
+symbol | string | BHTUSDT | Coin pair name
+status | string | NEW | Order status. Possible values are：NEW(new order，not filled)、PARTIALLY_FILLED（partially filled）、FILLED（fully filled）、CANCELLED（already cancelled）andREJECTED（order rejected）
+side | string | NEW | Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）
+action | string | OPEN | OPEN/CLOSE
+transactTime | long | 1607702400000 | Order creation time
+
+###  Open order
+
+**GET** https://cobidexopenapi.xxx.com /fapi/v1/openOrders
+
+Speed limit rules:
+
+Obtain open contract, the user's current order
+
+**Request**
+
+Headers
+
+X-CH-SIGN <span id="reqd">REQUIRED</span> | string | Signature
+-------------- | -------------- | --------------
+**X-CH-APIKEY** <span id="reqd">REQUIRED</span> | **string** | **Your API-key**
+**X-CH-TS** <span id="reqd">REQUIRED</span> | **integer** | **Time stamp**
+
+Body Parameters
+
+contractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC-USDT
+-------------- | -------------- | --------------
+**orderId** <span id="reqd">REQUIRED</span> | **string** | **Order ID**
+
+**Response:**
+
+200: OK
+
+```javascript
+[
+    {
+       "side": "BUY",
+       "executedQty": 0,
+       "orderId": 259396989397942275,
+       "price": 10000.0000000000000000,
+       "origQty": 1.0000000000000000,
+       "avgPrice": 0E-8,
+       "transactTime": "1607702400000",
+       "action": "OPEN",
+       "contractName": "E-BTC-USDT",
+       "type": "LIMIT",
+       "status": "INIT"
+    }
+]
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+orderId | long | 150695552109032492 | Order ID（system generated）
+contractName | string | E-BTC-USDT | Contract name
+price | float | 4765.29 | Order price
+origQty | float | 1.01 | Order quantity
+executedQty | float | 1.01 | Filled orders quantity
+avgPrice | float | 4754.24 | Filled orders average price
+type | string | LIMIT | Order type. Possible values can only be:LIMIT(limit price) andMARKET（market price）
+side | string | BUY | Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）
+status | string | NEW | Order status. Possible values are：NEW(new order，not filled)、PARTIALLY_FILLED（partially filled）、FILLED（fully filled）、CANCELLED（already cancelled）andREJECTED（order rejected）
+action | string | OPEN | OPEN/CLOSE
+transactTime | long | 1607702400000 | Order creation time,
+
+### Order record
+
+**GET** https://cobidexopenapi.xxx.com /fapi/v1/myTrades
+
+Speed limit rules: 20 times/ 2 seconds
+
+**Request**
+
+Headers
+
+X-CH-SIGN <span id="reqd">REQUIRED</span> | string | Signature
+-------------- | -------------- | --------------
+**X-CH-APIKEY** <span id="reqd">REQUIRED</span> | **string** | **Your API-key**
+**X-CH-TS** <span id="reqd">REQUIRED</span> | **integer** | **Time stamp**
+
+Body Parameters
+
+contractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC-USDT
+-------------- | -------------- | --------------
+**limit** <span id="opt">OPTIONAL</span> | **string** | **Lines per page, default 100, max 1000**
+**fromId** <span id="opt">OPTIONAL</span> | **integer** | **Start retrieving from this tradeId**
+
+**Response:**
+
+200: OK
+
+```javascript
+[
+  {
+    "symbol": "ETHBTC",
+    "id": 100211,
+    "bidId": 150695552109032492,
+    "askId": 150695552109032493,
+    "price": "4.00000100",
+    "qty": "12.00000000",
+    "time": 1499865549590,
+    "isBuyer": true,
+    "isMaker": false,
+    "fee":"0.001"
+  },...
+]
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+symbol | string | ETHBTC | Coin name(trade pair)
+tradeId | number | 28457 | Trade ID
+bidId | long | 150695552109032492 | Buyer order ID
+askId | long | 150695552109032493 | Seller order ID
+bidUserId | integer | 10024 | Buyer user ID
+askUserId | integer | 10025 | Seller user ID
+price | float | 4.01 | Filled price
+qty | float | 12 | Trade quantity
+amount | float | 5.38 | Filled amount
+time | number | 1499865549590 | Trade time stamp
+fee | number | 0.001 | Trading fees
+side | string | buy | Current order direction BUY purchase, SELL  selling
+contractName | string | E-BTC-USDT | Contract name
+isMaker | boolean | true | is it maker?
+isBuyer | boolean | true | is it buyer?
+
+
+### Account info
+
+**GET** https://cobidexopenapi.xxx.com /fapi/v1/account
+
+Speed limit rules: 20 times/ 2 seconds
+
+**Request**
+
+Headers
+
+X-CH-SIGN <span id="reqd">REQUIRED</span> | string | Signature
+-------------- | -------------- | --------------
+**X-CH-APIKEY** <span id="reqd">REQUIRED</span> | **string** | **Your API-key**
+**X-CH-TS** <span id="reqd">REQUIRED</span> | **integer** | **Time stamp**
+
+
+**Response:**
+
+200: OK
+
+```javascript
+{
+    "account": [
+        {
+            "marginCoin": "USDT",
+            "accountNormal": 999.5606,
+            "accountLock": 23799.5017,
+            "partPositionNormal": 9110.7294,
+            "totalPositionNormal": 0,
+            "achievedAmount": 4156.5072,
+            "unrealizedAmount": 650.6385,
+            "totalMarginRate": 0,
+            "totalEquity": 99964804.560,
+            "partEquity": 13917.8753,
+            "totalCost": 0,
+            "sumMarginRate": 873.4608,
+            "positionVos": [
+                {
+                    "contractId": 1,
+                    "contractName": "E-BTC-USDT",
+                    "contractSymbol": "BTC-USDT",
+                    "positions": [
+                        {
+                            "id": 13603,
+                            "uid": 10023,
+                            "contractId": 1,
+                            "positionType": 2,
+                            "side": "BUY",
+                            "volume": 69642.0,
+                            "openPrice": 11840.2394,
+                            "avgPrice": 11840.3095,
+                            "closePrice": 12155.3005,
+                            "leverageLevel": 24,
+                            "holdAmount": 7014.2111,
+                            "closeVolume": 40502.0,
+                            "pendingCloseVolume": 0,
+                            "realizedAmount": 8115.9125,
+                            "historyRealizedAmount": 1865.3985,
+                            "tradeFee": -432.0072,
+                            "capitalFee": 2891.2281,
+                            "closeProfit": 8117.6903,
+                            "shareAmount": 0.1112,
+                            "freezeLock": 0,
+                            "status": 1,
+                            "ctime": "2020-12-11T17:42:10",
+                            "mtime": "2020-12-18T20:35:43",
+                            "brokerId": 21,
+                            "marginRate": 0.2097,
+                            "reducePrice": 9740.8083,
+                            "returnRate": 0.3086,
+                            "unRealizedAmount": 2164.5289,
+                            "openRealizedAmount": 2165.0173,
+                            "positionBalance": 82458.2839,
+                            "settleProfit": 0.4883,
+                            "indexPrice": 12151.1175,
+                            "keepRate": 0.005,
+                            "maxFeeRate": 0.0025
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+
+name | type | description
+-------------- | -------------- | --------------
+account | [] | Balance collection
+
+`account` field:
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+marginCoin | string | USDT | Margin coin
+accountNormal | float | 10.05 | Balance account
+accountLock | float | 10.07 | Margin frozen account
+partPositionNormal | float | 10.07 | Restricted position margin balance
+totalPositionNormal | float | 10.07 | Full position initial margin
+achievedAmount | float | 10.07 | Profit and losses occurred 
+unrealizedAmount | float | 10.05 | Unfilled profit and losses
+totalMarginRate | float | 10.05 | Full position margin rate
+totalEquity | float | 10.07 | Full position equity
+partEquity | float | 10.07 | Restricted position equity
+totalCost | float | 10.07 | Full position costs
+sumMarginRate | float | 10.07 | All accounts margin rate
+positionVos | [ ] |  | Position contract record |
+
+
+`positionVos` field:
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+contractId | integer | 2 | Contract id
+contractName | string | E-BTC-USDT | Contract name
+contractSymbol | string | BTC-USDT | Contract coin pair
+positions | [ ] |  | Position details
+
+`positionVos` field:
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+id | integer | 2 | Position id
+uid | integer | 10023 | User ID
+positionType | integer | 1 | Hold position type(1 full，2 restrictive)
+side | string | SELL | Hold position direction SELL sell long, BUY buy short
+volume | float | 1.05 | Hold quantity
+openPrice | float | 1.05 | Open position price
+avgPrice | float | 1.05 | Hold average price
+closePrice | float | 1.05 | Balancing average price
+leverageLevel | float | 1.05 | Leverage multiple
+holdAmount | float | 1.05 | Hold position margin
+closeVolume | float | 1.05 | Balanced quantity
+pendingCloseVolume | float | 1.05 | The number of pending closing orders
+realizedAmount | float | 1.05 | Profit and losses occurred
+historyRealizedAmount | float | 1.05 | Historic accumulated profit and losses
+tradeFee | float | 1.05 | Trading fees 
+capitalFee | float | 1.05 | Capital costs
+closeProfit | float | 1.05 | Balancing profit and loss
+shareAmount | float | 1.05 | Amount to share
+freezeLock | integer | 0 | Position freeze status: 0 normal, 1 liquidation freeze, 2 delivery freeze
+status | integer | 0 | Position effectiveness，0 ineffective 1 effective
+ctime | time|  | Creation time
+mtime | time |  | Update time
+brokerId | integer | 1023 | Client id
+lockTime | time |  | liquidation lock time
+marginRate | float | 1.05 | Margin rate
+reducePrice | float | 1.05 | Price reduction
+returnRate | float | 1.05 | Return rate (profit rate)
+unRealizedAmount | float | 1.05 | Unfilled profit and losses
+openRealizedAmount | float | 1.05 | Open position unfilled  profit and losses
+positionBalance | float | 1.05 | Position value
+indexPrice | float | 1.05 | Newest marked price
+keepRate | float | 1.05 | Scaled minimum kept margin rate
+maxFeeRate | float | 1.05 | Balancing maximum fees rate
