@@ -1901,39 +1901,6 @@ name | type | example | description
 -------------- | -------------- | -------------- | --------------
 orderId | String | 256609229205684228 | Order ID
 
-### Cancel order
-
-**POST** https://cobidexopenapi.xxx.com /fapi/v1/cancel
-
-Speed limit rules: 20 times/ 2 seconds
-
-Headers
-
-**X-CH-SIGN** <span id="reqd">REQUIRED</span> | **string** | **Signature**
--------------- | -------------- | --------------
-**X-CH-APIKEY** <span id="reqd">REQUIRED</span> | **string** | **Your API-key**
-**X-CH-TS** <span id="reqd">REQUIRED</span> | **integer** | **Time stamp**
-
-Body Parameters
-
-**contractName** <span id="reqd">REQUIRED</span> | **string** | **Contract name E.g. E-BTC-USDT**
--------------- | -------------- | --------------
-**orderId** <span id="reqd">REQUIRED</span> | **string** | **Order ID**
-
-
-**Response:**
-
-200: OK
-
-```javascript
-{
-    "orderId": 256609229205684228
-}
-```
-
-name | type | example | description
--------------- | -------------- | -------------- | --------------
-orderId | String | 256609229205684228 | Order ID
 
 ### Cancel order
 
