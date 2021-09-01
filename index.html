@@ -430,6 +430,9 @@
                   <li>
                     <a href="#trading" class="toc-h2 toc-link" data-title="Trading">Trading</a>
                   </li>
+                  <li>
+                    <a href="#trading-2" class="toc-h2 toc-link" data-title="Trading">Trading</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -2981,7 +2984,7 @@
 </tr>
 </tbody></table>
 <h3 id='contract-list'>Contract List</h3>
-<p><strong>Get</strong> https://cobidexopenapi.xxx.com /fapi/v1/contracts</p>
+<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/contracts</p>
 
 <p><strong>Response</strong></p>
 
@@ -3095,7 +3098,7 @@
 <h2 id='market'>Market</h2><h3 id='security-none-2'>Security: None</h3>
 <p>Market section can be accessed freely without requiring any API-key or signatures.</p>
 <h3 id='depth'>Depth</h3>
-<p><strong>Get</strong> https://cobidexopenapi.xxx.com /fapi/v1/depth</p>
+<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/depth</p>
 
 <p><strong>Market depth data</strong></p>
 
@@ -3274,7 +3277,7 @@
 </tr>
 </tbody></table>
 <h3 id='get-index-marked-price'>Get index/marked price</h3>
-<p><strong>Get</strong> https://cobidexopenapi.xxx.com /fapi/v1/index</p>
+<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/index</p>
 
 <p><strong>Request</strong></p>
 
@@ -3339,7 +3342,7 @@
 </tr>
 </tbody></table>
 <h3 id='k-line-charts-data'>K line/charts data</h3>
-<p>https://cobidexopenapi.xxx.com /fapi/v1/klines</p>
+<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/klines</p>
 
 <p><strong>Request</strong></p>
 
@@ -3439,7 +3442,1186 @@
 <td>Trade volume</td>
 </tr>
 </tbody></table>
-<h2 id='trading'>Trading</h2>
+<h2 id='trading'>Trading</h2><h3 id='security-trade'>Security: TRADE</h3>
+<p>All interfaces under the transaction require signature and API-key verification</p>
+<h3 id='order-creation'>Order creation</h3>
+<p><strong>POST</strong> https://cobidexopenapi.xxx.com /fapi/v1/order</p>
+
+<p><strong>Request</strong></p>
+
+<p>Query Parameters</p>
+
+<table><thead>
+<tr>
+<th>ContractName <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+<th>Contract name E.g. E-BTC-USDT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>interval</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>K-line interval, identifies the sent value as:</strong> <br/> <strong>1min,5min,15min,30min,1h,1day,1week,1month</strong></td>
+</tr>
+<tr>
+<td><strong>limit</strong> <span id="opt">OPTIONAL</span></td>
+<td><strong>integer</strong></td>
+<td><strong>Default 100, Max 300</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong></p>
+
+<p>200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">111</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1594640340</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">222</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1587632160</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">333</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1587632100</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>idx</td>
+<td>long</td>
+<td>1538728740000</td>
+<td>Start timestamp (ms）</td>
+</tr>
+<tr>
+<td>open</td>
+<td>float</td>
+<td>36.00000</td>
+<td>Open price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>float</td>
+<td>33.00000</td>
+<td>Closing price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>float</td>
+<td>36.00000</td>
+<td>Max price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>float</td>
+<td>30.00000</td>
+<td>Min price</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>float</td>
+<td>2456.111</td>
+<td>Trade volume</td>
+</tr>
+</tbody></table>
+<h2 id='trading-2'>Trading</h2><h3 id='security-trade-2'>Security: TRADE</h3>
+<p>All interfaces under the transaction require signature and API-key verification</p>
+<h3 id='order-creation-2'>Order creation</h3>
+<p><strong>POST</strong> https://cobidexopenapi.xxx.com /fapi/v1/order</p>
+
+<p>Creation of single new orders</p>
+
+<p><strong>Request</strong></p>
+
+<p>Headers</p>
+
+<table><thead>
+<tr>
+<th>X-CH-TS <span id="opt">OPTIONAL</span></th>
+<th>string</th>
+<th>Time stamp</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>X-CH-APIKEY</strong> <span id="opt">OPTIONAL</span></td>
+<td><strong>string</strong></td>
+<td><strong>Your API-key</strong></td>
+</tr>
+<tr>
+<td><strong>X-CH-SIGN</strong> <span id="opt">OPTIONAL</span></td>
+<td><strong>string</strong></td>
+<td><strong>Signature</strong></td>
+</tr>
+</tbody></table>
+
+<p>Body Parameters</p>
+
+<table><thead>
+<tr>
+<th><strong>volume</strong> <span id="reqd">REQUIRED</span></th>
+<th><strong>number</strong></th>
+<th><strong>Order quantity</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>price</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>number</strong></td>
+<td><strong>Order price</strong></td>
+</tr>
+<tr>
+<td><strong>ContractName</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Contract name E.g. E-BTC-USDT</strong></td>
+</tr>
+<tr>
+<td><strong>type</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Order type, LIMIT/MARKET</strong></td>
+</tr>
+<tr>
+<td><strong>side</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>trade direction, BUY/SELL</strong></td>
+</tr>
+<tr>
+<td><strong>open</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Open balancing direction, OPEN/CLOSE</strong></td>
+</tr>
+<tr>
+<td><strong>position Type</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>number</strong></td>
+<td><strong>Hold-up position, 1 full position, 2 restrictive position</strong></td>
+</tr>
+<tr>
+<td><strong>clientOrderId</strong> <span id="opt">OPTIONAL</span></td>
+<td><strong>string</strong></td>
+<td><strong>Client order identity, a string with length less than 32 bit</strong></td>
+</tr>
+<tr>
+<td><strong>timeInForce</strong> <span id="opt">OPTIONAL</span></td>
+<td><strong>string</strong></td>
+<td><strong>IOC, FOK, POST_ONLY</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong></p>
+
+<p>200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">256609229205684228</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>String</td>
+<td>256609229205684228</td>
+<td>Order ID</td>
+</tr>
+</tbody></table>
+<h3 id='cancel-order'>Cancel order</h3>
+<p><strong>POST</strong> https://cobidexopenapi.xxx.com /fapi/v1/cancel</p>
+
+<p>Speed limit rules: 20 times/ 2 seconds</p>
+
+<p>Headers</p>
+
+<table><thead>
+<tr>
+<th><strong>X-CH-SIGN</strong> <span id="reqd">REQUIRED</span></th>
+<th><strong>string</strong></th>
+<th><strong>Signature</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>X-CH-APIKEY</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Your API-key</strong></td>
+</tr>
+<tr>
+<td><strong>X-CH-TS</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>integer</strong></td>
+<td><strong>Time stamp</strong></td>
+</tr>
+</tbody></table>
+
+<p>Body Parameters</p>
+
+<table><thead>
+<tr>
+<th><strong>contractName</strong> <span id="reqd">REQUIRED</span></th>
+<th><strong>string</strong></th>
+<th><strong>Contract name E.g. E-BTC-USDT</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>orderId</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Order ID</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong></p>
+
+<p>200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">256609229205684228</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>String</td>
+<td>256609229205684228</td>
+<td>Order ID</td>
+</tr>
+</tbody></table>
+<h3 id='cancel-order-2'>Cancel order</h3>
+<p><strong>POST</strong> https://cobidexopenapi.xxx.com /fapi/v1/cancel</p>
+
+<p>Speed limit rules: 20 times/ 2 seconds</p>
+
+<p><strong>Request</strong></p>
+
+<p>Headers</p>
+
+<table><thead>
+<tr>
+<th>X-CH-SIGN <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+<th>Signature</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>X-CH-APIKEY</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Your API-key</strong></td>
+</tr>
+<tr>
+<td><strong>X-CH-TS</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>integer</strong></td>
+<td><strong>Time stamp</strong></td>
+</tr>
+</tbody></table>
+
+<p>Body Parameters</p>
+
+<table><thead>
+<tr>
+<th>contractName <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+<th>Contract name E.g. E-BTC-USDT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>orderId</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Order ID</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong></p>
+
+<p>200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">256609229205684228</span>
+<span class="p">}</span>
+</code></pre></div><h3 id='order-details'>Order details</h3>
+<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/order</p>
+
+<p><strong>Request</strong></p>
+
+<p>Headers</p>
+
+<table><thead>
+<tr>
+<th>contractName <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p><strong>Response:</strong></p>
+
+<p>200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
+    <span class="p">{</span>
+       <span class="dl">"</span><span class="s2">side</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BUY</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">executedQty</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">259396989397942275</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="mf">10000.0000000000000000</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">origQty</span><span class="dl">"</span><span class="p">:</span> <span class="mf">1.0000000000000000</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">avgPrice</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="nx">E</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">transactTime</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1607702400000</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">action</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">OPEN</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">contractName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">E-BTC-USDT</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">LIMIT</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">INIT</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>long</td>
+<td>150695552109032492</td>
+<td>Order ID（system generated</td>
+</tr>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>E-BTC-USDT</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>price</td>
+<td>float</td>
+<td>10.5</td>
+<td>Order price</td>
+</tr>
+<tr>
+<td>origQty</td>
+<td>float</td>
+<td>10.5</td>
+<td>Order quantity</td>
+</tr>
+<tr>
+<td>executedQty</td>
+<td>float</td>
+<td>20</td>
+<td>Order quantity</td>
+</tr>
+<tr>
+<td>avgPrice</td>
+<td>float</td>
+<td>10.5</td>
+<td>Average transaction price</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>BHTUSDT</td>
+<td>Coin pair name</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>NEW</td>
+<td>Order status. Possible values are：NEW(new order，not filled)、PARTIALLY_FILLED（partially filled）、FILLED（fully filled）、CANCELLED（already cancelled）andREJECTED（order rejected）</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>NEW</td>
+<td>Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）</td>
+</tr>
+<tr>
+<td>action</td>
+<td>string</td>
+<td>OPEN</td>
+<td>OPEN/CLOSE</td>
+</tr>
+<tr>
+<td>transactTime</td>
+<td>long</td>
+<td>1607702400000</td>
+<td>Order creation time</td>
+</tr>
+</tbody></table>
+<h3 id='open-order'>Open order</h3>
+<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/openOrders</p>
+
+<p>Speed limit rules:</p>
+
+<p>Obtain open contract, the user&#39;s current order</p>
+
+<p><strong>Request</strong></p>
+
+<p>Headers</p>
+
+<table><thead>
+<tr>
+<th>X-CH-SIGN <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+<th>Signature</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>X-CH-APIKEY</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Your API-key</strong></td>
+</tr>
+<tr>
+<td><strong>X-CH-TS</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>integer</strong></td>
+<td><strong>Time stamp</strong></td>
+</tr>
+</tbody></table>
+
+<p>Body Parameters</p>
+
+<table><thead>
+<tr>
+<th>contractName <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+<th>Contract name E.g. E-BTC-USDT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>orderId</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Order ID</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong></p>
+
+<p>200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
+    <span class="p">{</span>
+       <span class="dl">"</span><span class="s2">side</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BUY</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">executedQty</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">259396989397942275</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="mf">10000.0000000000000000</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">origQty</span><span class="dl">"</span><span class="p">:</span> <span class="mf">1.0000000000000000</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">avgPrice</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="nx">E</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">transactTime</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1607702400000</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">action</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">OPEN</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">contractName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">E-BTC-USDT</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">LIMIT</span><span class="dl">"</span><span class="p">,</span>
+       <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">INIT</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>long</td>
+<td>150695552109032492</td>
+<td>Order ID（system generated）</td>
+</tr>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>E-BTC-USDT</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>price</td>
+<td>float</td>
+<td>4765.29</td>
+<td>Order price</td>
+</tr>
+<tr>
+<td>origQty</td>
+<td>float</td>
+<td>1.01</td>
+<td>Order quantity</td>
+</tr>
+<tr>
+<td>executedQty</td>
+<td>float</td>
+<td>1.01</td>
+<td>Filled orders quantity</td>
+</tr>
+<tr>
+<td>avgPrice</td>
+<td>float</td>
+<td>4754.24</td>
+<td>Filled orders average price</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>LIMIT</td>
+<td>Order type. Possible values can only be:LIMIT(limit price) andMARKET（market price）</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>BUY</td>
+<td>Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>NEW</td>
+<td>Order status. Possible values are：NEW(new order，not filled)、PARTIALLY_FILLED（partially filled）、FILLED（fully filled）、CANCELLED（already cancelled）andREJECTED（order rejected）</td>
+</tr>
+<tr>
+<td>action</td>
+<td>string</td>
+<td>OPEN</td>
+<td>OPEN/CLOSE</td>
+</tr>
+<tr>
+<td>transactTime</td>
+<td>long</td>
+<td>1607702400000</td>
+<td>Order creation time,</td>
+</tr>
+</tbody></table>
+<h3 id='order-record'>Order record</h3>
+<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/myTrades</p>
+
+<p>Speed limit rules: 20 times/ 2 seconds</p>
+
+<p><strong>Request</strong></p>
+
+<p>Headers</p>
+
+<table><thead>
+<tr>
+<th>X-CH-SIGN <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+<th>Signature</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>X-CH-APIKEY</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Your API-key</strong></td>
+</tr>
+<tr>
+<td><strong>X-CH-TS</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>integer</strong></td>
+<td><strong>Time stamp</strong></td>
+</tr>
+</tbody></table>
+
+<p>Body Parameters</p>
+
+<table><thead>
+<tr>
+<th>contractName <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+<th>Contract name E.g. E-BTC-USDT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>limit</strong> <span id="opt">OPTIONAL</span></td>
+<td><strong>string</strong></td>
+<td><strong>Lines per page, default 100, max 1000</strong></td>
+</tr>
+<tr>
+<td><strong>fromId</strong> <span id="opt">OPTIONAL</span></td>
+<td><strong>integer</strong></td>
+<td><strong>Start retrieving from this tradeId</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong></p>
+
+<p>200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">symbol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ETHBTC</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">100211</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">bidId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">150695552109032492</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">askId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">150695552109032493</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4.00000100</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">qty</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">12.00000000</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">time</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1499865549590</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">isBuyer</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">isMaker</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fee</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">0.001</span><span class="dl">"</span>
+  <span class="p">},...</span>
+<span class="p">]</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>ETHBTC</td>
+<td>Coin name(trade pair)</td>
+</tr>
+<tr>
+<td>tradeId</td>
+<td>number</td>
+<td>28457</td>
+<td>Trade ID</td>
+</tr>
+<tr>
+<td>bidId</td>
+<td>long</td>
+<td>150695552109032492</td>
+<td>Buyer order ID</td>
+</tr>
+<tr>
+<td>askId</td>
+<td>long</td>
+<td>150695552109032493</td>
+<td>Seller order ID</td>
+</tr>
+<tr>
+<td>bidUserId</td>
+<td>integer</td>
+<td>10024</td>
+<td>Buyer user ID</td>
+</tr>
+<tr>
+<td>askUserId</td>
+<td>integer</td>
+<td>10025</td>
+<td>Seller user ID</td>
+</tr>
+<tr>
+<td>price</td>
+<td>float</td>
+<td>4.01</td>
+<td>Filled price</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>float</td>
+<td>12</td>
+<td>Trade quantity</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>float</td>
+<td>5.38</td>
+<td>Filled amount</td>
+</tr>
+<tr>
+<td>time</td>
+<td>number</td>
+<td>1499865549590</td>
+<td>Trade time stamp</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>number</td>
+<td>0.001</td>
+<td>Trading fees</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>buy</td>
+<td>Current order direction BUY purchase, SELL  selling</td>
+</tr>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>E-BTC-USDT</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>isMaker</td>
+<td>boolean</td>
+<td>true</td>
+<td>is it maker?</td>
+</tr>
+<tr>
+<td>isBuyer</td>
+<td>boolean</td>
+<td>true</td>
+<td>is it buyer?</td>
+</tr>
+</tbody></table>
+<h3 id='account-info'>Account info</h3>
+<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/account</p>
+
+<p>Speed limit rules: 20 times/ 2 seconds</p>
+
+<p><strong>Request</strong></p>
+
+<p>Headers</p>
+
+<table><thead>
+<tr>
+<th>X-CH-SIGN <span id="reqd">REQUIRED</span></th>
+<th>string</th>
+<th>Signature</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>X-CH-APIKEY</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>string</strong></td>
+<td><strong>Your API-key</strong></td>
+</tr>
+<tr>
+<td><strong>X-CH-TS</strong> <span id="reqd">REQUIRED</span></td>
+<td><strong>integer</strong></td>
+<td><strong>Time stamp</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong></p>
+
+<p>200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">account</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">marginCoin</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDT</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">accountNormal</span><span class="dl">"</span><span class="p">:</span> <span class="mf">999.5606</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">accountLock</span><span class="dl">"</span><span class="p">:</span> <span class="mf">23799.5017</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">partPositionNormal</span><span class="dl">"</span><span class="p">:</span> <span class="mf">9110.7294</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">totalPositionNormal</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">achievedAmount</span><span class="dl">"</span><span class="p">:</span> <span class="mf">4156.5072</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">unrealizedAmount</span><span class="dl">"</span><span class="p">:</span> <span class="mf">650.6385</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">totalMarginRate</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">totalEquity</span><span class="dl">"</span><span class="p">:</span> <span class="mf">99964804.560</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">partEquity</span><span class="dl">"</span><span class="p">:</span> <span class="mf">13917.8753</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">totalCost</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">sumMarginRate</span><span class="dl">"</span><span class="p">:</span> <span class="mf">873.4608</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">positionVos</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="dl">"</span><span class="s2">contractId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">contractName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">E-BTC-USDT</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">contractSymbol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BTC-USDT</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">positions</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13603</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">uid</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10023</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">contractId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">positionType</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">side</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BUY</span><span class="dl">"</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">volume</span><span class="dl">"</span><span class="p">:</span> <span class="mf">69642.0</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">openPrice</span><span class="dl">"</span><span class="p">:</span> <span class="mf">11840.2394</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">avgPrice</span><span class="dl">"</span><span class="p">:</span> <span class="mf">11840.3095</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">closePrice</span><span class="dl">"</span><span class="p">:</span> <span class="mf">12155.3005</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">leverageLevel</span><span class="dl">"</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">holdAmount</span><span class="dl">"</span><span class="p">:</span> <span class="mf">7014.2111</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">closeVolume</span><span class="dl">"</span><span class="p">:</span> <span class="mf">40502.0</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">pendingCloseVolume</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">realizedAmount</span><span class="dl">"</span><span class="p">:</span> <span class="mf">8115.9125</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">historyRealizedAmount</span><span class="dl">"</span><span class="p">:</span> <span class="mf">1865.3985</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">tradeFee</span><span class="dl">"</span><span class="p">:</span> <span class="o">-</span><span class="mf">432.0072</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">capitalFee</span><span class="dl">"</span><span class="p">:</span> <span class="mf">2891.2281</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">closeProfit</span><span class="dl">"</span><span class="p">:</span> <span class="mf">8117.6903</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">shareAmount</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.1112</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">freezeLock</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">ctime</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-12-11T17:42:10</span><span class="dl">"</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">mtime</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2020-12-18T20:35:43</span><span class="dl">"</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">brokerId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">marginRate</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.2097</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">reducePrice</span><span class="dl">"</span><span class="p">:</span> <span class="mf">9740.8083</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">returnRate</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.3086</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">unRealizedAmount</span><span class="dl">"</span><span class="p">:</span> <span class="mf">2164.5289</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">openRealizedAmount</span><span class="dl">"</span><span class="p">:</span> <span class="mf">2165.0173</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">positionBalance</span><span class="dl">"</span><span class="p">:</span> <span class="mf">82458.2839</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">settleProfit</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.4883</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">indexPrice</span><span class="dl">"</span><span class="p">:</span> <span class="mf">12151.1175</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">keepRate</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">,</span>
+                            <span class="dl">"</span><span class="s2">maxFeeRate</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.0025</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>account</td>
+<td>[]</td>
+<td>Balance collection</td>
+</tr>
+</tbody></table>
+
+<p><code>account</code> field:</p>
+
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marginCoin</td>
+<td>string</td>
+<td>USDT</td>
+<td>Margin coin</td>
+</tr>
+<tr>
+<td>accountNormal</td>
+<td>float</td>
+<td>10.05</td>
+<td>Balance account</td>
+</tr>
+<tr>
+<td>accountLock</td>
+<td>float</td>
+<td>10.07</td>
+<td>Margin frozen account</td>
+</tr>
+<tr>
+<td>partPositionNormal</td>
+<td>float</td>
+<td>10.07</td>
+<td>Restricted position margin balance</td>
+</tr>
+<tr>
+<td>totalPositionNormal</td>
+<td>float</td>
+<td>10.07</td>
+<td>Full position initial margin</td>
+</tr>
+<tr>
+<td>achievedAmount</td>
+<td>float</td>
+<td>10.07</td>
+<td>Profit and losses occurred</td>
+</tr>
+<tr>
+<td>unrealizedAmount</td>
+<td>float</td>
+<td>10.05</td>
+<td>Unfilled profit and losses</td>
+</tr>
+<tr>
+<td>totalMarginRate</td>
+<td>float</td>
+<td>10.05</td>
+<td>Full position margin rate</td>
+</tr>
+<tr>
+<td>totalEquity</td>
+<td>float</td>
+<td>10.07</td>
+<td>Full position equity</td>
+</tr>
+<tr>
+<td>partEquity</td>
+<td>float</td>
+<td>10.07</td>
+<td>Restricted position equity</td>
+</tr>
+<tr>
+<td>totalCost</td>
+<td>float</td>
+<td>10.07</td>
+<td>Full position costs</td>
+</tr>
+<tr>
+<td>sumMarginRate</td>
+<td>float</td>
+<td>10.07</td>
+<td>All accounts margin rate</td>
+</tr>
+<tr>
+<td>positionVos</td>
+<td>[ ]</td>
+<td></td>
+<td>Position contract record</td>
+</tr>
+</tbody></table>
+
+<p><code>positionVos</code> field:</p>
+
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>integer</td>
+<td>2</td>
+<td>Contract id</td>
+</tr>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>E-BTC-USDT</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>contractSymbol</td>
+<td>string</td>
+<td>BTC-USDT</td>
+<td>Contract coin pair</td>
+</tr>
+<tr>
+<td>positions</td>
+<td>[ ]</td>
+<td></td>
+<td>Position details</td>
+</tr>
+</tbody></table>
+
+<p><code>positionVos</code> field:</p>
+
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>2</td>
+<td>Position id</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>integer</td>
+<td>10023</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>positionType</td>
+<td>integer</td>
+<td>1</td>
+<td>Hold position type(1 full，2 restrictive)</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>SELL</td>
+<td>Hold position direction SELL sell long, BUY buy short</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>float</td>
+<td>1.05</td>
+<td>Hold quantity</td>
+</tr>
+<tr>
+<td>openPrice</td>
+<td>float</td>
+<td>1.05</td>
+<td>Open position price</td>
+</tr>
+<tr>
+<td>avgPrice</td>
+<td>float</td>
+<td>1.05</td>
+<td>Hold average price</td>
+</tr>
+<tr>
+<td>closePrice</td>
+<td>float</td>
+<td>1.05</td>
+<td>Balancing average price</td>
+</tr>
+<tr>
+<td>leverageLevel</td>
+<td>float</td>
+<td>1.05</td>
+<td>Leverage multiple</td>
+</tr>
+<tr>
+<td>holdAmount</td>
+<td>float</td>
+<td>1.05</td>
+<td>Hold position margin</td>
+</tr>
+<tr>
+<td>closeVolume</td>
+<td>float</td>
+<td>1.05</td>
+<td>Balanced quantity</td>
+</tr>
+<tr>
+<td>pendingCloseVolume</td>
+<td>float</td>
+<td>1.05</td>
+<td>The number of pending closing orders</td>
+</tr>
+<tr>
+<td>realizedAmount</td>
+<td>float</td>
+<td>1.05</td>
+<td>Profit and losses occurred</td>
+</tr>
+<tr>
+<td>historyRealizedAmount</td>
+<td>float</td>
+<td>1.05</td>
+<td>Historic accumulated profit and losses</td>
+</tr>
+<tr>
+<td>tradeFee</td>
+<td>float</td>
+<td>1.05</td>
+<td>Trading fees</td>
+</tr>
+<tr>
+<td>capitalFee</td>
+<td>float</td>
+<td>1.05</td>
+<td>Capital costs</td>
+</tr>
+<tr>
+<td>closeProfit</td>
+<td>float</td>
+<td>1.05</td>
+<td>Balancing profit and loss</td>
+</tr>
+<tr>
+<td>shareAmount</td>
+<td>float</td>
+<td>1.05</td>
+<td>Amount to share</td>
+</tr>
+<tr>
+<td>freezeLock</td>
+<td>integer</td>
+<td>0</td>
+<td>Position freeze status: 0 normal, 1 liquidation freeze, 2 delivery freeze</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>0</td>
+<td>Position effectiveness，0 ineffective 1 effective</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>time</td>
+<td></td>
+<td>Creation time</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>time</td>
+<td></td>
+<td>Update time</td>
+</tr>
+<tr>
+<td>brokerId</td>
+<td>integer</td>
+<td>1023</td>
+<td>Client id</td>
+</tr>
+<tr>
+<td>lockTime</td>
+<td>time</td>
+<td></td>
+<td>liquidation lock time</td>
+</tr>
+<tr>
+<td>marginRate</td>
+<td>float</td>
+<td>1.05</td>
+<td>Margin rate</td>
+</tr>
+<tr>
+<td>reducePrice</td>
+<td>float</td>
+<td>1.05</td>
+<td>Price reduction</td>
+</tr>
+<tr>
+<td>returnRate</td>
+<td>float</td>
+<td>1.05</td>
+<td>Return rate (profit rate)</td>
+</tr>
+<tr>
+<td>unRealizedAmount</td>
+<td>float</td>
+<td>1.05</td>
+<td>Unfilled profit and losses</td>
+</tr>
+<tr>
+<td>openRealizedAmount</td>
+<td>float</td>
+<td>1.05</td>
+<td>Open position unfilled  profit and losses</td>
+</tr>
+<tr>
+<td>positionBalance</td>
+<td>float</td>
+<td>1.05</td>
+<td>Position value</td>
+</tr>
+<tr>
+<td>indexPrice</td>
+<td>float</td>
+<td>1.05</td>
+<td>Newest marked price</td>
+</tr>
+<tr>
+<td>keepRate</td>
+<td>float</td>
+<td>1.05</td>
+<td>Scaled minimum kept margin rate</td>
+</tr>
+<tr>
+<td>maxFeeRate</td>
+<td>float</td>
+<td>1.05</td>
+<td>Balancing maximum fees rate</td>
+</tr>
+</tbody></table>
+
       </div>
       <div class="dark-box">
       </div>
