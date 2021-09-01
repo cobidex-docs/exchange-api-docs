@@ -631,3 +631,19 @@ html, body {
 .copy-clipboard:hover {
   opacity: 0.8;
 }
+
+#reqd{
+    display: block;
+    text-align: left;
+    font-size: 10px;
+    font-weight: normal;
+    color: #FF4642;
+}
+
+#opt{
+    display: block;
+    text-align: left;
+    font-size: 10px;
+    font-weight: normal;
+    color: #74818D;
+}
