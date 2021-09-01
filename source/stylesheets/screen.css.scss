@@ -411,12 +411,13 @@ html, body {
 
     th {
       padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      border: 1px solid #ccc;
       vertical-align: bottom;
     }
 
     td {
       padding: 10px;
+      border: 1px solid #ccc;
     }
 
     tr:last-child {
