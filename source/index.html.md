@@ -1578,7 +1578,9 @@ public class WsTest {
 
 ```
 # Contract
+
 ## Public
+
 ### Security: None
 
 Endpoints under **Public** section can be accessed freely without requiring any API-key or signatures
@@ -1590,6 +1592,7 @@ Endpoints under **Public** section can be accessed freely without requiring any 
 This endpoint checks connectivity to the host
 
 **Response**
+
 200: OK
 
 ```javascript
@@ -1598,7 +1601,9 @@ This endpoint checks connectivity to the host
 ### Check Server Time
 
 **Get** https://cobidexopenapi.xxx.com/fapi/v1/time
+
 **Response**
+
 200: OK
 
 ```javascript
@@ -1615,7 +1620,9 @@ timezone | string | China standard time | server time zone
 ### Contract List
 
 **Get** https://cobidexopenapi.xxx.com /fapi/v1/contracts
+
 **Response**
+
 200: OK
 
 ```javascript
@@ -1657,6 +1664,7 @@ maxValidOrder | number | 100000 | Maximum valid order quantity
 ## Market
 
 ### Security: None
+
 Market section can be accessed freely without requiring any API-key or signatures.
 
 ### Depth
@@ -1674,6 +1682,7 @@ limit <span id="opt">OPTIONAL</span> | integer | Default 100, Max 100
 **Contract name** <span id="reqd">REQUIRED</span> | **string** | **Contract Name E.g. E-BTC-USDT**
 
 **Response**
+
 200: OK
 
 Successfully retrieve market depth data
@@ -1730,6 +1739,7 @@ Contract name <span id="reqd">REQUIRED</span> | string | Contract  name E.g. E-B
 -------------- | -------------- | --------------
 
 **Response**
+
 200: OK
 
 Successfully obtain ticker info
@@ -1767,6 +1777,7 @@ Contract name <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BT
 **limit** <span id="opt">OPTIONAL</span> | **string** | **Default 100, Max 100**
 
 **Response:**
+
 200: OK
 
 ```javascript
@@ -1800,6 +1811,7 @@ ContractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC
 **limit** <span id="opt">OPTIONAL</span> | **integer** | **Default 100, Max 300**
 
 **Response:**
+
 200: OK
 
 ```javascript
