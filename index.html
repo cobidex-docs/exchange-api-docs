@@ -431,7 +431,7 @@
                     <a href="#trading" class="toc-h2 toc-link" data-title="Trading">Trading</a>
                   </li>
                   <li>
-                    <a href="#trading-2" class="toc-h2 toc-link" data-title="Trading">Trading</a>
+                    <a href="#account" class="toc-h2 toc-link" data-title="Account">Account</a>
                   </li>
               </ul>
           </li>
@@ -2943,7 +2943,7 @@
 </code></pre></div><h1 id='contract'>Contract</h1><h2 id='public'>Public</h2><h3 id='security-none'>Security: None</h3>
 <p>Endpoints under <strong>Public</strong> section can be accessed freely without requiring any API-key or signatures</p>
 <h3 id='test-connectivity'>Test Connectivity</h3>
-<p><strong>Get</strong>  https://cobidexopenapi.xxx.com/fapi/v1/ping</p>
+<p><strong>Get</strong>  <code>https://cobidexopenapi.xxx.com/fapi/v1/ping</code></p>
 
 <p>This endpoint checks connectivity to the host</p>
 
@@ -2952,7 +2952,7 @@
 <p>200: OK</p>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
 </code></pre></div><h3 id='check-server-time'>Check Server Time</h3>
-<p><strong>Get</strong> https://cobidexopenapi.xxx.com/fapi/v1/time</p>
+<p><strong>Get</strong> <code>https://cobidexopenapi.xxx.com/fapi/v1/time</code></p>
 
 <p><strong>Response</strong></p>
 
@@ -2984,7 +2984,7 @@
 </tr>
 </tbody></table>
 <h3 id='contract-list'>Contract List</h3>
-<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/contracts</p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/contracts</code></p>
 
 <p><strong>Response</strong></p>
 
@@ -3098,7 +3098,7 @@
 <h2 id='market'>Market</h2><h3 id='security-none-2'>Security: None</h3>
 <p>Market section can be accessed freely without requiring any API-key or signatures.</p>
 <h3 id='depth'>Depth</h3>
-<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/depth</p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/depth</code></p>
 
 <p><strong>Market depth data</strong></p>
 
@@ -3200,7 +3200,7 @@
 </tr>
 </tbody></table>
 <h3 id='24hrs-ticker'>24hrs ticker</h3>
-<p><strong>Get</strong> https://cobidexopenapi.xxx.com /fapi/v1/ticker</p>
+<p><strong>Get</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/ticker</code></p>
 
 <p>24 hour price change statistics</p>
 
@@ -3277,7 +3277,7 @@
 </tr>
 </tbody></table>
 <h3 id='get-index-marked-price'>Get index/marked price</h3>
-<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/index</p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/index</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3342,7 +3342,7 @@
 </tr>
 </tbody></table>
 <h3 id='k-line-charts-data'>K line/charts data</h3>
-<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/klines</p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/klines</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3445,110 +3445,7 @@
 <h2 id='trading'>Trading</h2><h3 id='security-trade'>Security: TRADE</h3>
 <p>All interfaces under the transaction require signature and API-key verification</p>
 <h3 id='order-creation'>Order creation</h3>
-<p><strong>POST</strong> https://cobidexopenapi.xxx.com /fapi/v1/order</p>
-
-<p><strong>Request</strong></p>
-
-<p>Query Parameters</p>
-
-<table><thead>
-<tr>
-<th>ContractName <span id="reqd">REQUIRED</span></th>
-<th>string</th>
-<th>Contract name E.g. E-BTC-USDT</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>interval</strong> <span id="reqd">REQUIRED</span></td>
-<td><strong>string</strong></td>
-<td><strong>K-line interval, identifies the sent value as:</strong> <br/> <strong>1min,5min,15min,30min,1h,1day,1week,1month</strong></td>
-</tr>
-<tr>
-<td><strong>limit</strong> <span id="opt">OPTIONAL</span></td>
-<td><strong>integer</strong></td>
-<td><strong>Default 100, Max 300</strong></td>
-</tr>
-</tbody></table>
-
-<p><strong>Response:</strong></p>
-
-<p>200: OK</p>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">111</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1594640340</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">222</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1587632160</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">333</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1587632100</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div>
-<table><thead>
-<tr>
-<th>name</th>
-<th>type</th>
-<th>example</th>
-<th>description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>idx</td>
-<td>long</td>
-<td>1538728740000</td>
-<td>Start timestamp (ms）</td>
-</tr>
-<tr>
-<td>open</td>
-<td>float</td>
-<td>36.00000</td>
-<td>Open price</td>
-</tr>
-<tr>
-<td>close</td>
-<td>float</td>
-<td>33.00000</td>
-<td>Closing price</td>
-</tr>
-<tr>
-<td>high</td>
-<td>float</td>
-<td>36.00000</td>
-<td>Max price</td>
-</tr>
-<tr>
-<td>low</td>
-<td>float</td>
-<td>30.00000</td>
-<td>Min price</td>
-</tr>
-<tr>
-<td>vol</td>
-<td>float</td>
-<td>2456.111</td>
-<td>Trade volume</td>
-</tr>
-</tbody></table>
-<h2 id='trading-2'>Trading</h2><h3 id='security-trade-2'>Security: TRADE</h3>
-<p>All interfaces under the transaction require signature and API-key verification</p>
-<h3 id='order-creation-2'>Order creation</h3>
-<p><strong>POST</strong> https://cobidexopenapi.xxx.com /fapi/v1/order</p>
+<p><strong>POST</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/order</code></p>
 
 <p>Creation of single new orders</p>
 
@@ -3713,7 +3610,7 @@
 </tr>
 </tbody></table>
 <h3 id='cancel-order-2'>Cancel order</h3>
-<p><strong>POST</strong> https://cobidexopenapi.xxx.com /fapi/v1/cancel</p>
+<p><strong>POST</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/cancel</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
@@ -3763,7 +3660,7 @@
     <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">256609229205684228</span>
 <span class="p">}</span>
 </code></pre></div><h3 id='order-details'>Order details</h3>
-<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/order</p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/order</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3872,7 +3769,7 @@
 </tr>
 </tbody></table>
 <h3 id='open-order'>Open order</h3>
-<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/openOrders</p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/openOrders</code></p>
 
 <p>Speed limit rules:</p>
 
@@ -4012,7 +3909,7 @@
 </tr>
 </tbody></table>
 <h3 id='order-record'>Order record</h3>
-<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/myTrades</p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/myTrades</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
@@ -4177,8 +4074,10 @@
 <td>is it buyer?</td>
 </tr>
 </tbody></table>
+<h2 id='account'>Account</h2><h3 id='security-user_data'>Security: USER_DATA</h3>
+<p>All interfaces under the account require signature and API-key verification</p>
 <h3 id='account-info'>Account info</h3>
-<p><strong>GET</strong> https://cobidexopenapi.xxx.com /fapi/v1/account</p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/account</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
