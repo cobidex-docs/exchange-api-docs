@@ -1587,7 +1587,7 @@ Endpoints under **Public** section can be accessed freely without requiring any 
 
 ### Test Connectivity
 
-**Get**  https://cobidexopenapi.xxx.com/fapi/v1/ping
+**Get**  `https://cobidexopenapi.xxx.com/fapi/v1/ping`
 
 This endpoint checks connectivity to the host
 
@@ -1600,7 +1600,7 @@ This endpoint checks connectivity to the host
 ```
 ### Check Server Time
 
-**Get** https://cobidexopenapi.xxx.com/fapi/v1/time
+**Get** `https://cobidexopenapi.xxx.com/fapi/v1/time`
 
 **Response**
 
@@ -1619,7 +1619,7 @@ timezone | string | China standard time | server time zone
 
 ### Contract List
 
-**GET** https://cobidexopenapi.xxx.com /fapi/v1/contracts
+**GET** `https://cobidexopenapi.xxx.com /fapi/v1/contracts`
 
 **Response**
 
@@ -1669,7 +1669,7 @@ Market section can be accessed freely without requiring any API-key or signature
 
 ### Depth
 
-**GET** https://cobidexopenapi.xxx.com /fapi/v1/depth
+**GET** `https://cobidexopenapi.xxx.com /fapi/v1/depth`
 
 **Market depth data**
 
@@ -1727,7 +1727,7 @@ name | type | example | description
 
 ### 24hrs ticker
 
-**Get** https://cobidexopenapi.xxx.com /fapi/v1/ticker
+**Get** `https://cobidexopenapi.xxx.com /fapi/v1/ticker`
 
 24 hour price change statistics
 
@@ -1766,7 +1766,7 @@ rose | string | +0.5 | Price variation
 
 ### Get index/marked price
 
-**GET** https://cobidexopenapi.xxx.com /fapi/v1/index
+**GET** `https://cobidexopenapi.xxx.com /fapi/v1/index`
 
 **Request**
 
@@ -1799,7 +1799,7 @@ lastFundingRate | float | 0.123 | Current fund rate
 
 ### K line/charts data
 
-**GET** https://cobidexopenapi.xxx.com /fapi/v1/klines
+**GET** `https://cobidexopenapi.xxx.com /fapi/v1/klines`
 
 **Request**
 
@@ -1852,66 +1852,6 @@ high | float | 36.00000 | Max price
 low | float | 30.00000 | Min price
 vol | float | 2456.111 | Trade volume
 
-## Trading
-
-### Security: TRADE
-
-All interfaces under the transaction require signature and API-key verification
-
-### Order creation
-
-**POST** https://cobidexopenapi.xxx.com /fapi/v1/order
-
-**Request**
-
-Query Parameters
-
-ContractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC-USDT
--------------- | -------------- | --------------
-**interval** <span id="reqd">REQUIRED</span> | **string** | **K-line interval, identifies the sent value as:** <br/> **1min,5min,15min,30min,1h,1day,1week,1month**
-**limit** <span id="opt">OPTIONAL</span> | **integer** | **Default 100, Max 300**
-
-**Response:**
-
-200: OK
-
-```javascript
-[
-    {
-        "high": "6228.77",
-        "vol": "111",
-        "low": "6228.77",
-        "idx": 1594640340,
-        "close": "6228.77",
-        "open": "6228.77"
-    },
-    {
-        "high": "6228.77",
-        "vol": "222",
-        "low": "6228.77",
-        "idx": 1587632160,
-        "close": "6228.77",
-        "open": "6228.77"
-    },
-    {
-        "high": "6228.77",
-        "vol": "333",
-        "low": "6228.77",
-        "idx": 1587632100,
-        "close": "6228.77",
-        "open": "6228.77"
-    }
-]
-```
-
-name | type | example | description
--------------- | -------------- | -------------- | --------------
-idx | long | 1538728740000 | Start timestamp (ms）
-open | float | 36.00000 | Open price
-close | float | 33.00000 | Closing price
-high | float | 36.00000 | Max price
-low | float | 30.00000 | Min price
-vol | float | 2456.111 | Trade volume
 
 ## Trading
 
@@ -1921,7 +1861,7 @@ All interfaces under the transaction require signature and API-key verification
 
 ### Order creation
 
-**POST** https://cobidexopenapi.xxx.com /fapi/v1/order
+**POST** `https://cobidexopenapi.xxx.com /fapi/v1/order`
 
 Creation of single new orders
 
@@ -1997,7 +1937,7 @@ orderId | String | 256609229205684228 | Order ID
 
 ### Cancel order
 
-**POST** https://cobidexopenapi.xxx.com /fapi/v1/cancel
+**POST** `https://cobidexopenapi.xxx.com /fapi/v1/cancel`
 
 Speed limit rules: 20 times/ 2 seconds
 
@@ -2028,7 +1968,7 @@ contractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC
 
 ### Order details
 
-**GET** https://cobidexopenapi.xxx.com /fapi/v1/order
+**GET** `https://cobidexopenapi.xxx.com /fapi/v1/order`
 
 
 **Request**
@@ -2077,7 +2017,7 @@ transactTime | long | 1607702400000 | Order creation time
 
 ###  Open order
 
-**GET** https://cobidexopenapi.xxx.com /fapi/v1/openOrders
+**GET** `https://cobidexopenapi.xxx.com /fapi/v1/openOrders`
 
 Speed limit rules:
 
@@ -2136,7 +2076,7 @@ transactTime | long | 1607702400000 | Order creation time,
 
 ### Order record
 
-**GET** https://cobidexopenapi.xxx.com /fapi/v1/myTrades
+**GET** `https://cobidexopenapi.xxx.com /fapi/v1/myTrades`
 
 Speed limit rules: 20 times/ 2 seconds
 
@@ -2195,10 +2135,16 @@ contractName | string | E-BTC-USDT | Contract name
 isMaker | boolean | true | is it maker?
 isBuyer | boolean | true | is it buyer?
 
+## Account
+
+### Security: USER_DATA
+
+All interfaces under the account require signature and API-key verification
+
 
 ### Account info
 
-**GET** https://cobidexopenapi.xxx.com /fapi/v1/account
+**GET** `https://cobidexopenapi.xxx.com /fapi/v1/account`
 
 Speed limit rules: 20 times/ 2 seconds
 
