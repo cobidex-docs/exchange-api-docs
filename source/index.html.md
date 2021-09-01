@@ -1669,9 +1669,9 @@ Market section can be accessed freely without requiring any API-key or signature
 
 Query Parameters
 
-limit (OPTIONAL) | integer | Default 100, Max 100
+limit <span id="opt">OPTIONAL</span> | integer | Default 100, Max 100
 -------------- | -------------- | --------------
-**Contract name (REQUIRED)** | **string** | **Contract Name E.g. E-BTC-USDT**
+**Contract name** <span id="reqd">REQUIRED</span> | **string** | **Contract Name E.g. E-BTC-USDT**
 
 **Response**
 200: OK
@@ -1726,7 +1726,7 @@ name | type | example | description
 
 Query Parameters
 
-Contract name (REQUIRED) | string | Contract  name E.g. E-BTC-USDT
+Contract name <span id="reqd">REQUIRED</span> | string | Contract  name E.g. E-BTC-USDT
 -------------- | -------------- | --------------
 
 **Response**
@@ -1762,9 +1762,9 @@ rose | string | +0.5 | Price variation
 
 Query Parameters
 
-Contract name (REQUIRED) | string | Contract name E.g. E-BTC-USDT
+Contract name <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC-USDT
 -------------- | -------------- | --------------
-**limit (OPTIONAL)** | **string** | **Default 100, Max 100**
+**limit** <span id="opt">OPTIONAL</span> | **string** | **Default 100, Max 100**
 
 **Response:**
 200: OK
@@ -1794,10 +1794,10 @@ https://cobidexopenapi.xxx.com /fapi/v1/klines
 
 Query Parameters
 
-ContractName (REQUIRED) | string | Contract name E.g. E-BTC-USDT
+ContractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC-USDT
 -------------- | -------------- | --------------
-**interval (REQUIRED)** | **string** | **K-line interval, identifies the sent value as:<br/> 1min,5min,15min,30min,1h,1day,1week,1month**
-**limit (OPTIONAL)** | **integer** | **Default 100, Max 300**
+**interval** <span id="reqd">REQUIRED</span> | **string** | **K-line interval, identifies the sent value as:<br/> 1min,5min,15min,30min,1h,1day,1week,1month**
+**limit** <span id="opt">OPTIONAL</span> | **integer** | **Default 100, Max 300**
 
 **Response:**
 200: OK
