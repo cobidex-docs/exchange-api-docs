@@ -418,6 +418,20 @@
           <li>
             <a href="#ws-api-demo-java" class="toc-h1 toc-link" data-title="ws-api Demo (java) "><span id="ws-api-java">ws-api Demo (java) </span></a>
           </li>
+          <li>
+            <a href="#contract" class="toc-h1 toc-link" data-title="Contract">Contract</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#public" class="toc-h2 toc-link" data-title="Public">Public</a>
+                  </li>
+                  <li>
+                    <a href="#market" class="toc-h2 toc-link" data-title="Market">Market</a>
+                  </li>
+                  <li>
+                    <a href="#trading" class="toc-h2 toc-link" data-title="Trading">Trading</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://www.cobidex.com/en_US/'>Cobidex</a></li>
@@ -2923,7 +2937,500 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
+</code></pre></div><h1 id='contract'>Contract</h1><h2 id='public'>Public</h2><h3 id='security-none'>Security: None</h3>
+<p>Endpoints under <strong>Public</strong> section can be accessed freely without requiring any API-key or signatures</p>
+<h3 id='test-connectivity'>Test Connectivity</h3>
+<p><strong>Get</strong>  https://cobidexopenapi.xxx.com/fapi/v1/ping</p>
+
+<p>This endpoint checks connectivity to the host</p>
+
+<p><strong>Response</strong>
+200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre></div><h3 id='check-server-time'>Check Server Time</h3>
+<p><strong>Get</strong> https://cobidexopenapi.xxx.com/fapi/v1/time
+<strong>Response</strong>
+200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">serverTime</span><span class="dl">"</span><span class="p">:</span><span class="mi">1607702400000</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">timezone</span><span class="dl">"</span><span class="p">:</span><span class="nx">Chinese</span> <span class="nx">standard</span> <span class="nx">time</span>
+<span class="p">}</span>
 </code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>serverTime</td>
+<td>long</td>
+<td>1607702400000</td>
+<td>server timestamp</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>string</td>
+<td>China standard time</td>
+<td>server time zone</td>
+</tr>
+</tbody></table>
+<h3 id='contract-list'>Contract List</h3>
+<p><strong>Get</strong> https://cobidexopenapi.xxx.com /fapi/v1/contracts
+<strong>Response</strong>
+200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">symbol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">H-HT-USDT</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">pricePrecision</span><span class="dl">"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">side</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">maxMarketVolume</span><span class="dl">"</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">multiplier</span><span class="dl">"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">minOrderVolume</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">maxMarketMoney</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">H</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">maxLimitVolume</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">maxValidOrder</span><span class="dl">"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">multiplierCoin</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HT</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">minOrderMoney</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">maxLimitMoney</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>E-BTC-USDT</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>status</td>
+<td>number</td>
+<td>1</td>
+<td>status（0：cannot trade，1：can trade</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>S</td>
+<td>contract type, E: perpetual contract, S: test contract, others are mixed contract</td>
+</tr>
+<tr>
+<td>side</td>
+<td>number</td>
+<td>1</td>
+<td>Contract direction(backwards：0，1：forward)</td>
+</tr>
+<tr>
+<td>multiplier</td>
+<td>number</td>
+<td>0.5</td>
+<td>Contract face value</td>
+</tr>
+<tr>
+<td>multiplierCoin</td>
+<td>string</td>
+<td>BTC</td>
+<td>Contract face value unit</td>
+</tr>
+<tr>
+<td>pricePrecision</td>
+<td>number</td>
+<td>4</td>
+<td>Precision of the price</td>
+</tr>
+<tr>
+<td>minOrderVolume</td>
+<td>number</td>
+<td>10</td>
+<td>Minimum order volume</td>
+</tr>
+<tr>
+<td>minOrderMoney</td>
+<td>number</td>
+<td>10</td>
+<td>Minimum order value</td>
+</tr>
+<tr>
+<td>maxMarketVolume</td>
+<td>number</td>
+<td>100000</td>
+<td>Market price order maximum volume</td>
+</tr>
+<tr>
+<td>maxMarketMoney</td>
+<td>number</td>
+<td>100000</td>
+<td>Market price order maximum value</td>
+</tr>
+<tr>
+<td>maxLimitVolume</td>
+<td>number</td>
+<td>100000</td>
+<td>Limit price order maximum volume</td>
+</tr>
+<tr>
+<td>maxValidOrder</td>
+<td>number</td>
+<td>100000</td>
+<td>Maximum valid order quantity</td>
+</tr>
+</tbody></table>
+<h2 id='market'>Market</h2><h3 id='security-none-2'>Security: None</h3>
+<p>Market section can be accessed freely without requiring any API-key or signatures.</p>
+<h3 id='depth'>Depth</h3>
+<p><strong>Get</strong> https://cobidexopenapi.xxx.com /fapi/v1/depth</p>
+
+<p><strong>Market depth data</strong></p>
+
+<p><strong>Request</strong></p>
+
+<p>Query Parameters</p>
+
+<table><thead>
+<tr>
+<th>limit (OPTIONAL)</th>
+<th>integer</th>
+<th>Default 100, Max 100</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>Contract name (REQUIRED)</strong></td>
+<td><strong>string</strong></td>
+<td><strong>Contract Name E.g. E-BTC-USDT</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response</strong>
+200: OK</p>
+
+<p>Successfully retrieve market depth data</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">bids</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">3.90000000</span><span class="dl">"</span><span class="p">,</span>   <span class="c1">// price</span>
+      <span class="dl">"</span><span class="s2">431.00000000</span><span class="dl">"</span>  <span class="c1">// quantity</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">4.00000000</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">431.00000000</span><span class="dl">"</span>
+    <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="dl">"</span><span class="s2">asks</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">4.00000200</span><span class="dl">"</span><span class="p">,</span>  <span class="c1">// price</span>
+      <span class="dl">"</span><span class="s2">12.00000000</span><span class="dl">"</span>  <span class="c1">// quantity</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">5.10000000</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">28.00000000</span><span class="dl">"</span>
+    <span class="p">]</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time</td>
+<td>long</td>
+<td>1595563624731</td>
+<td>Current Timestamp  (ms)</td>
+</tr>
+<tr>
+<td>bids</td>
+<td>list</td>
+<td>Look below</td>
+<td>Order book purchase info</td>
+</tr>
+<tr>
+<td>asks</td>
+<td>list</td>
+<td>Look below</td>
+<td>Order book selling info</td>
+</tr>
+</tbody></table>
+
+<p>The fields bids and asks are lists of order book price level entries, sorted from best to worst.</p>
+
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&#39; &#39;</td>
+<td>float</td>
+<td>131.1</td>
+<td>price level</td>
+</tr>
+<tr>
+<td>&#39; &#39;</td>
+<td>float</td>
+<td>2.3</td>
+<td>Total order quantity for this price level</td>
+</tr>
+</tbody></table>
+<h3 id='24hrs-ticker'>24hrs ticker</h3>
+<p><strong>Get</strong> https://cobidexopenapi.xxx.com /fapi/v1/ticker</p>
+
+<p>24 hour price change statistics</p>
+
+<p><strong>Request</strong></p>
+
+<p>Query Parameters</p>
+
+<table><thead>
+<tr>
+<th>Contract name (REQUIRED)</th>
+<th>string</th>
+<th>Contract  name E.g. E-BTC-USDT</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p><strong>Response</strong>
+200: OK</p>
+
+<p>Successfully obtain ticker info</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9279.0301</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1302</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">last</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9200</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9279.0301</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">rose</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">time</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1595563624731</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time</td>
+<td>long</td>
+<td>1595563624731</td>
+<td>Open time</td>
+</tr>
+<tr>
+<td>high</td>
+<td>float</td>
+<td>9900</td>
+<td>Higher price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>float</td>
+<td>8800.34</td>
+<td>Lower price</td>
+</tr>
+<tr>
+<td>last</td>
+<td>float</td>
+<td>8900</td>
+<td>Newest price</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>float</td>
+<td>4999</td>
+<td>Trade volume</td>
+</tr>
+<tr>
+<td>rose</td>
+<td>string</td>
+<td>+0.5</td>
+<td>Price variation</td>
+</tr>
+</tbody></table>
+<h3 id='get-index-marked-price'>Get index/marked price</h3>
+<p><strong>Get</strong> https://cobidexopenapi.xxx.com /fapi/v1/index</p>
+
+<p><strong>Request</strong></p>
+
+<p>Query Parameters</p>
+
+<table><thead>
+<tr>
+<th>Contract name (REQUIRED)</th>
+<th>string</th>
+<th>Contract name E.g. E-BTC-USDT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>limit (OPTIONAL)</strong></td>
+<td><strong>string</strong></td>
+<td><strong>Default 100, Max 100</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong>
+200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">markPrice</span><span class="dl">"</span><span class="p">:</span> <span class="mf">581.5</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">indexPrice</span><span class="dl">"</span><span class="p">:</span> <span class="mf">646.3933333333333</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">lastFundingRate</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">contractName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">E-ETH-USDT</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">time</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1608273554063</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>indexPrice</td>
+<td>float</td>
+<td>0.055</td>
+<td>Index price</td>
+</tr>
+<tr>
+<td>markPrice</td>
+<td>float</td>
+<td>0.0578</td>
+<td>Marked price</td>
+</tr>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>E-BTC-USDT</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>lastFundingRate</td>
+<td>float</td>
+<td>0.123</td>
+<td>Current fund rate</td>
+</tr>
+</tbody></table>
+<h3 id='k-line-charts-data'>K line/charts data</h3>
+<p>https://cobidexopenapi.xxx.com /fapi/v1/klines</p>
+
+<p><strong>Request</strong></p>
+
+<p>Query Parameters</p>
+
+<table><thead>
+<tr>
+<th>ContractName (REQUIRED)</th>
+<th>string</th>
+<th>Contract name E.g. E-BTC-USDT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>interval (REQUIRED)</strong></td>
+<td><strong>string</strong></td>
+<td><strong>K-line interval, identifies the sent value as:<br/> 1min,5min,15min,30min,1h,1day,1week,1month</strong></td>
+</tr>
+<tr>
+<td><strong>limit (OPTIONAL)</strong></td>
+<td><strong>integer</strong></td>
+<td><strong>Default 100, Max 300</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Response:</strong>
+200: OK</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">111</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1594640340</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">222</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1587632160</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">vol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">333</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">low</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">idx</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1587632100</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6228.77</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>idx</td>
+<td>long</td>
+<td>1538728740000</td>
+<td>Start timestamp (ms）</td>
+</tr>
+<tr>
+<td>open</td>
+<td>float</td>
+<td>36.00000</td>
+<td>Open price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>float</td>
+<td>33.00000</td>
+<td>Closing price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>float</td>
+<td>36.00000</td>
+<td>Max price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>float</td>
+<td>30.00000</td>
+<td>Min price</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>float</td>
+<td>2456.111</td>
+<td>Trade volume</td>
+</tr>
+</tbody></table>
+<h2 id='trading'>Trading</h2>
       </div>
       <div class="dark-box">
       </div>
