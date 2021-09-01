@@ -1577,3 +1577,268 @@ public class WsTest {
 }
 
 ```
+# Contract
+## Public
+### Security: None
+
+Endpoints under **Public** section can be accessed freely without requiring any API-key or signatures
+
+### Test Connectivity
+
+**Get**  https://cobidexopenapi.xxx.com/fapi/v1/ping
+
+This endpoint checks connectivity to the host
+
+**Response**
+200: OK
+
+```javascript
+{}
+```
+### Check Server Time
+
+**Get** https://cobidexopenapi.xxx.com/fapi/v1/time
+**Response**
+200: OK
+
+```javascript
+{
+    "serverTime":1607702400000,
+    "timezone":Chinese standard time
+}
+```
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+serverTime | long | 1607702400000 |server timestamp
+timezone | string | China standard time | server time zone
+
+### Contract List
+
+**Get** https://cobidexopenapi.xxx.com /fapi/v1/contracts
+**Response**
+200: OK
+
+```javascript
+[
+    {
+        "symbol": "H-HT-USDT",
+        "pricePrecision": 8,
+        "side": 1,
+        "maxMarketVolume": 100000,
+        "multiplier": 6,
+        "minOrderVolume": 1,
+        "maxMarketMoney": 10000000,
+        "type": "H",
+        "maxLimitVolume": 1000000,
+        "maxValidOrder": 20,
+        "multiplierCoin": "HT",
+        "minOrderMoney": 0.001,
+        "maxLimitMoney": 1000000,
+        "status": 1
+    }
+]
+```
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+symbol | string | E-BTC-USDT | Contract name
+status | number | 1 | status（0：cannot trade，1：can trade
+type | string | S | contract type, E: perpetual contract, S: test contract, others are mixed contract
+side | number | 1 | Contract direction(backwards：0，1：forward)
+multiplier | number | 0.5 | Contract face value
+multiplierCoin | string | BTC | Contract face value unit
+pricePrecision | number | 4 | Precision of the price
+minOrderVolume | number | 10 | Minimum order volume
+minOrderMoney | number | 10 | Minimum order value
+maxMarketVolume | number | 100000 | Market price order maximum volume
+maxMarketMoney | number | 100000 | Market price order maximum value
+maxLimitVolume | number | 100000 | Limit price order maximum volume
+maxValidOrder | number | 100000 | Maximum valid order quantity
+
+## Market
+
+### Security: None
+Market section can be accessed freely without requiring any API-key or signatures.
+
+### Depth
+
+**Get** https://cobidexopenapi.xxx.com /fapi/v1/depth
+
+**Market depth data**
+
+**Request**
+
+Query Parameters
+
+limit (OPTIONAL) | integer | Default 100, Max 100
+-------------- | -------------- | --------------
+**Contract name (REQUIRED)** | **string** | **Contract Name E.g. E-BTC-USDT**
+
+**Response**
+200: OK
+
+Successfully retrieve market depth data
+
+```javascript
+{
+  "bids": [
+    [
+      "3.90000000",   // price
+      "431.00000000"  // quantity
+    ],
+    [
+      "4.00000000",
+      "431.00000000"
+    ]
+  ],
+  "asks": [
+    [
+      "4.00000200",  // price
+      "12.00000000"  // quantity
+    ],
+    [
+      "5.10000000",
+      "28.00000000"
+    ]
+  ]
+}
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+time | long | 1595563624731 | Current Timestamp  (ms)
+bids | list | Look below | Order book purchase info
+asks | list | Look below | Order book selling info
+
+The fields bids and asks are lists of order book price level entries, sorted from best to worst.
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+' ' | float | 131.1 | price level
+' ' | float | 2.3 | Total order quantity for this price level
+
+### 24hrs ticker
+
+**Get** https://cobidexopenapi.xxx.com /fapi/v1/ticker
+
+24 hour price change statistics
+
+**Request**
+
+Query Parameters
+
+Contract name (REQUIRED) | string | Contract  name E.g. E-BTC-USDT
+-------------- | -------------- | --------------
+
+**Response**
+200: OK
+
+Successfully obtain ticker info
+
+```javascript
+{
+    "high": "9279.0301",
+    "vol": "1302",
+    "last": "9200",
+    "low": "9279.0301",
+    "rose": "0",
+    "time": 1595563624731
+}
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+time | long | 1595563624731 | Open time
+high | float | 9900 | Higher price
+low | float | 8800.34 | Lower price
+last | float | 8900 | Newest price
+vol | float | 4999 | Trade volume
+rose | string | +0.5 | Price variation
+
+### Get index/marked price
+
+**Get** https://cobidexopenapi.xxx.com /fapi/v1/index
+
+**Request**
+
+Query Parameters
+
+Contract name (REQUIRED) | string | Contract name E.g. E-BTC-USDT
+-------------- | -------------- | --------------
+**limit (OPTIONAL)** | **string** | **Default 100, Max 100**
+
+**Response:**
+200: OK
+
+```javascript
+{
+    "markPrice": 581.5,
+    "indexPrice": 646.3933333333333,
+    "lastFundingRate": 0.001,
+    "contractName": "E-ETH-USDT",
+    "time": 1608273554063
+}
+```
+
+name | type | example | Description
+-------------- | -------------- | -------------- | --------------
+indexPrice | float | 0.055 | Index price
+markPrice | float | 0.0578 | Marked price
+contractName | string | E-BTC-USDT | Contract name
+lastFundingRate | float | 0.123 | Current fund rate
+
+### K line/charts data
+
+https://cobidexopenapi.xxx.com /fapi/v1/klines
+
+**Request**
+
+Query Parameters
+
+ContractName (REQUIRED) | string | Contract name E.g. E-BTC-USDT
+-------------- | -------------- | --------------
+**interval (REQUIRED)** | **string** | **K-line interval, identifies the sent value as:<br/> 1min,5min,15min,30min,1h,1day,1week,1month**
+**limit (OPTIONAL)** | **integer** | **Default 100, Max 300**
+
+**Response:**
+200: OK
+
+```javascript
+[
+    {
+        "high": "6228.77",
+        "vol": "111",
+        "low": "6228.77",
+        "idx": 1594640340,
+        "close": "6228.77",
+        "open": "6228.77"
+    },
+    {
+        "high": "6228.77",
+        "vol": "222",
+        "low": "6228.77",
+        "idx": 1587632160,
+        "close": "6228.77",
+        "open": "6228.77"
+    },
+    {
+        "high": "6228.77",
+        "vol": "333",
+        "low": "6228.77",
+        "idx": 1587632100,
+        "close": "6228.77",
+        "open": "6228.77"
+    }
+]
+```
+
+name | type | example | description
+-------------- | -------------- | -------------- | --------------
+idx | long | 1538728740000 | Start timestamp (ms）
+open | float | 36.00000 | Open price
+close | float | 33.00000 | Closing price
+high | float | 36.00000 | Max price
+low | float | 30.00000 | Min price
+vol | float | 2456.111 | Trade volume
+
+## Trading
+
