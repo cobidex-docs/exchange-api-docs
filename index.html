@@ -2943,7 +2943,7 @@
 </code></pre></div><h1 id='contract'>Contract</h1><h2 id='public'>Public</h2><h3 id='security-none'>Security: None</h3>
 <p>Endpoints under <strong>Public</strong> section can be accessed freely without requiring any API-key or signatures</p>
 <h3 id='test-connectivity'>Test Connectivity</h3>
-<p><strong>Get</strong>  <code>https://cobidexopenapi.xxx.com/fapi/v1/ping</code></p>
+<p><strong>Get</strong>  <code>https://cobidexopenapi.cobidex.com/fapi/v1/ping</code></p>
 
 <p>This endpoint checks connectivity to the host</p>
 
@@ -2952,7 +2952,7 @@
 <p>200: OK</p>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
 </code></pre></div><h3 id='check-server-time'>Check Server Time</h3>
-<p><strong>Get</strong> <code>https://cobidexopenapi.xxx.com/fapi/v1/time</code></p>
+<p><strong>Get</strong> <code>https://cobidexopenapi.cobidex.com/fapi/v1/time</code></p>
 
 <p><strong>Response</strong></p>
 
@@ -2984,7 +2984,7 @@
 </tr>
 </tbody></table>
 <h3 id='contract-list'>Contract List</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/contracts</code></p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/contracts</code></p>
 
 <p><strong>Response</strong></p>
 
@@ -3098,7 +3098,7 @@
 <h2 id='market'>Market</h2><h3 id='security-none-2'>Security: None</h3>
 <p>Market section can be accessed freely without requiring any API-key or signatures.</p>
 <h3 id='depth'>Depth</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/depth</code></p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/depth</code></p>
 
 <p><strong>Market depth data</strong></p>
 
@@ -3200,7 +3200,7 @@
 </tr>
 </tbody></table>
 <h3 id='24hrs-ticker'>24hrs ticker</h3>
-<p><strong>Get</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/ticker</code></p>
+<p><strong>Get</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/ticker</code></p>
 
 <p>24 hour price change statistics</p>
 
@@ -3277,7 +3277,7 @@
 </tr>
 </tbody></table>
 <h3 id='get-index-marked-price'>Get index/marked price</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/index</code></p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/index</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3342,7 +3342,7 @@
 </tr>
 </tbody></table>
 <h3 id='k-line-charts-data'>K line/charts data</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/klines</code></p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/klines</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3445,7 +3445,7 @@
 <h2 id='trading'>Trading</h2><h3 id='security-trade'>Security: TRADE</h3>
 <p>All interfaces under the transaction require signature and API-key verification</p>
 <h3 id='order-creation'>Order creation</h3>
-<p><strong>POST</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/order</code></p>
+<p><strong>POST</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/order</code></p>
 
 <p>Creation of single new orders</p>
 
@@ -3546,7 +3546,7 @@
 </tr>
 </tbody></table>
 <h3 id='cancel-order'>Cancel order</h3>
-<p><strong>POST</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/cancel</code></p>
+<p><strong>POST</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/cancel</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
@@ -3596,7 +3596,7 @@
     <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">256609229205684228</span>
 <span class="p">}</span>
 </code></pre></div><h3 id='order-details'>Order details</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/order</code></p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/order</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3705,7 +3705,7 @@
 </tr>
 </tbody></table>
 <h3 id='open-order'>Open order</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/openOrders</code></p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/openOrders</code></p>
 
 <p>Speed limit rules:</p>
 
@@ -3845,7 +3845,7 @@
 </tr>
 </tbody></table>
 <h3 id='order-record'>Order record</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/myTrades</code></p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/myTrades</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
@@ -4013,7 +4013,7 @@
 <h2 id='account'>Account</h2><h3 id='security-user_data'>Security: USER_DATA</h3>
 <p>All interfaces under the account require signature and API-key verification</p>
 <h3 id='account-info'>Account info</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.xxx.com /fapi/v1/account</code></p>
+<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/account</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
