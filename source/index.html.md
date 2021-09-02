@@ -245,7 +245,7 @@ Return value:
 }
 ```
 
-|Virtual Currency Number|xxx-cny|xxx-btc|xxx-usdt|
+|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
 |----------|-------|-------|-------|
 |btc|	btccny|	-|	btcusdt|
 |eth|	ethcny|	ethbtc|	ethusdt|
@@ -332,7 +332,7 @@ Return value:
     ]
 }
 ```
-|Virtual Currency Number|xxx-cny|xxx-btc|xxx-usdt|
+|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
 |----------|-------|-------|-------|
 |btc|	btccny|	-|	btcusdt|
 |eth|	ethcny|	ethbtc|	ethusdt|
@@ -364,7 +364,7 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	“”|
 
-|Virtual Currency Number|xxx-cny（xxx101）|xxx-btc（xxx201）|
+|Virtual Currency Number|cobidex-cny（cobidex101）|cobidex-btc（cobidex201）|
 |------------|--------|----------|
 |btc|	btccny|	-|
 |eth|	ethcny|	ethbtc|
@@ -394,7 +394,7 @@ Return value:
 |data	|“”|
 
  
-|Virtual Currency Number|xxx-cny（xxx101）|xxx-btc（xxx201）|
+|Virtual Currency Number|cobidex-cny（cobidex101）|cobidex-btc（cobidex201）|
 |------------|-----------|------------|
 |btc|	btccny|	-|
 |eth|	ethcny|	ethbtc|
@@ -429,7 +429,7 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	{"order_id":34343}|Successful return to the transactionID|
 
-|Virtual Currency Number|xxx-cny（xxx101）|xxx-btc（xxx201）|
+|Virtual Currency Number|cobidex-cny（cobidex101）|cobidex-btc（cobidex201）|
 |------------|------------|------------|
 |btc|	btccny|	-|
 |eth|	ethcny|	ethbtc|
@@ -525,7 +525,7 @@ Return value:
 |symbol|	Must fill|	Market mark，bchbtc，See below for details|
 |period|	Must fill|	In minutes，The analogy is 1 in a minute，One day is1440|
 
-|Virtual Currency Number|xxx-cny|xxx-btc|xxx-usdt|
+|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
 |------------|-----------|----------|----------|
 |bch|	bcccny|	bchbtc|	bchusdt|
 |btc|	btccny|	-|	btcusdt|
@@ -604,7 +604,7 @@ Return value:
     "time": 1514448473626
 }
 ```
-|Virtual Currency Number|xxx-cny|xxx-btc|xxx-usdt|
+|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
 |------------|--------|----------|----------|
 |bcc|	bcccny|	bccbtc|	bccusdt|
 |btc|	btccny|	-|	btcusdt|
@@ -663,7 +663,7 @@ Return value:
         }
 ]
 ```
-|Virtual Currency Number|xxx-cny|xxx-btc|xxx-usdt|
+|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
 |------------|--------|-----------|----------|
 |bch|	bcccny|	bchbtc|	bchusdt|
 |btc|	btccny|	-|	btcusdt|
@@ -697,7 +697,7 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	{"btcusdt":15000,"ethusdt":800}|
 
-|Virtual Currency Number|xxx-cny|xxx-btc|xxx-usdt|
+|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
 |------------|--------|----------|----------|
 |btc|	btccny|	-|	btcusdt|
 |eth|	ethcny|	ethbtc|	ethusdt|
@@ -879,7 +879,7 @@ Return value:
     ]
 }
 ```
-|Virtual Currency Number|xxx-cny|xxx-btc|xxx-usdt|
+|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
 |------------|--------|----------|----------|
 |btc|	btccny|	-|	btcusdt|
 |eth|	ethcny|	ethbtc|	ethusdt|
