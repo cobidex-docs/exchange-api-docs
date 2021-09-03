@@ -467,16 +467,7 @@ Return value:
        "low": 279.57,
        "rose": -0.44564773
      },
-     {
-       "symbol": "bchusdt",
-       "high": 12,
-       "vol": 100,
-       "last": 1,
-       "low": 12,
-       "buy": "11.00",
-       "sell": "9.00",
-       "rose": 0
-     },
+     
      {
        "symbol": "ethbtc",
        "high": 1,
@@ -517,12 +508,11 @@ Return value:
 
 |parameter|	Fill in type|	Explain|
 |------------|--------|-----------------------------|
-|symbol|	Must fill|	Market mark，bchbtc，See below for details|
+|symbol|	Must fill|	Market mark，See below for details|
 |period|	Must fill|	In minutes，The analogy is 1 in a minute，One day is1440|
 
 |Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
 |------------|----------|----------|
-|bch|	bchbtc|	bchusdt|
 |btc|	-|	btcusdt|
 |etc|	etcbtc|	etcusdt|
 |eth|	ethbtc|	ethusdt|
@@ -620,7 +610,7 @@ Return value:
 
 |parameter|	Fill in type|	Explain|
 |------------|--------|-----------------------------|
-|symbol|	Must fill|	Market mark，bchbtc，See below for details|
+|symbol|	Must fill|	Market mark，See below for details|
 
 Return value:
 
@@ -659,7 +649,6 @@ Return value:
 ```
 |Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
 |------------|-----------|----------|
-|bch|	bchbtc|	bchusdt|
 |btc|	-|	btcusdt|
 |etc|	etcbtc|	etcusdt|
 |eth|	ethbtc|	ethusdt|
@@ -915,13 +904,6 @@ Return value:
 "count_coin": "btc",
 "amount_precision": 2,
 "base_coin": "ltc",
-"price_precision": 8
-},
-{
-"symbol": "bchbtc",
-"count_coin": "btc",
-"amount_precision": 3,
-"base_coin": "bch",
 "price_precision": 8
 },
 {
@@ -1309,8 +1291,6 @@ Return value:
    event_rep: "rep",
    channel: "review",
    data: {
-          bchbtc:  {amount: "115.968833484"close: "0.07956"high: "0.086323"low: "0.079251"open: "0.086323"rose: "-0.07834528"vol: "1393.247"}
-          bchusdt: {amount: "416316.164145661", close: "513.56", high: "556.42", low: "510.85", open: "555.71", …}
           btcusdt: {amount: "999341.34124", close: "6450.18", high: "6486.39", low: "6359.63", open: "6435.79", …}
    }
 }
