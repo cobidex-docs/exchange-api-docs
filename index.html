@@ -333,7 +333,7 @@
               </ul>
           </li>
           <li>
-            <a href="#api-reference" class="toc-h1 toc-link" data-title=" API Reference"><span id="b5"> API Reference</span></a>
+            <a href="#spot-api" class="toc-h1 toc-link" data-title=" Spot API"><span id="b5"> Spot API</span></a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#balance-of-assets" class="toc-h2 toc-link" data-title="Balance of assets"><span id="1">Balance of assets</span></a>
@@ -366,16 +366,10 @@
                     <a href="#acquisition-of-trading-records" class="toc-h2 toc-link" data-title="Acquisition of Trading Records"><span id="10">Acquisition of Trading Records</span></a>
                   </li>
                   <li>
-                    <a href="#get-the-latest-transaction-price-of-each-pair-of-currencies" class="toc-h2 toc-link" data-title="Get the latest transaction price of each pair of currencies"><span id="11">Get the latest transaction price of each pair of currencies</span></a>
+                    <a href="#get-the-latest-transaction-price-of-each-crypto-currency-pair" class="toc-h2 toc-link" data-title="Get the latest transaction price of each crypto currency pair"><span id="11">Get the latest transaction price of each crypto currency pair</span></a>
                   </li>
                   <li>
-                    <a href="#search-the-depth-of-buying-and-selling" class="toc-h2 toc-link" data-title="Search the depth of buying and selling"><span id="12">Search the depth of buying and selling</span></a>
-                  </li>
-                  <li>
-                    <a href="#batch-order-simultaneous-bulk-withdrawal-of-designated-orders" class="toc-h2 toc-link" data-title="Batch order，Simultaneous bulk withdrawal of designated orders"><span id="13">Batch order，Simultaneous bulk withdrawal of designated orders</span></a>
-                  </li>
-                  <li>
-                    <a href="#place-orders-in-batches-and-withdraw-designated-orders-in-batches-v2" class="toc-h2 toc-link" data-title="Place orders in batches and withdraw designated orders in batches - V2"><span id="27">Place orders in batches and withdraw designated orders in batches - V2</span></a>
+                    <a href="#search-the-depth-of-the-order-book" class="toc-h2 toc-link" data-title="Search the depth of the order book"><span id="12">Search the depth of the order book</span></a>
                   </li>
                   <li>
                     <a href="#get-the-current-delegation" class="toc-h2 toc-link" data-title="Get the current delegation"><span id="14">Get the current delegation</span></a>
@@ -387,7 +381,7 @@
                     <a href="#all-transaction-pairs-and-accuracy-supported-by-query-system" class="toc-h2 toc-link" data-title="All Transaction Pairs and Accuracy Supported by Query System"><span id="17">All Transaction Pairs and Accuracy Supported by Query System</span></a>
                   </li>
                   <li>
-                    <a href="#get-user-assets-and-recharge-records" class="toc-h2 toc-link" data-title="Get user assets and recharge records"><span id="18">Get user assets and recharge records</span></a>
+                    <a href="#balance-and-deposit-records" class="toc-h2 toc-link" data-title="Balance and deposit records"><span id="18">Balance and deposit records</span></a>
                   </li>
                   <li>
                     <a href="#subscription-k-line-market" class="toc-h2 toc-link" data-title="Subscription - K Line Market"><span id="19">Subscription - K Line Market</span></a>
@@ -416,10 +410,10 @@
               </ul>
           </li>
           <li>
-            <a href="#ws-api-demo-java" class="toc-h1 toc-link" data-title="ws-api Demo (java) "><span id="ws-api-java">ws-api Demo (java) </span></a>
+            <a href="#demo-api-java" class="toc-h1 toc-link" data-title="Demo API (java) "><span id="ws-api-java">Demo API (java) </span></a>
           </li>
           <li>
-            <a href="#contract" class="toc-h1 toc-link" data-title="Contract">Contract</a>
+            <a href="#futures-api" class="toc-h1 toc-link" data-title="Futures API">Futures API</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#public" class="toc-h2 toc-link" data-title="Public">Public</a>
@@ -458,7 +452,7 @@
 
 <p>Developers are recommended to use REST API to proceed spot trading and withdrawals.</p>
 <h1 id='encrypted-verification-of-api'><span id="a1">Encrypted Verification of API</span></h1><h2 id='generate-an-api-key'><span id="a2">Generate an API Key</span></h2>
-<p>Before signing any request, you must generate an API key via <a href="https://www.cobidex.com/en_US/">Cobidex’s official website </a>【User Center】-【API】. After generating the key, there are three things you must bear in mind:</p>
+<p>Before signing any request, you must generate an API key on API management on users dashboard via cobidex website. After generating the key, there are three things you must bear in mind:</p>
 
 <ul>
 <li><p>API Key</p></li>
@@ -477,7 +471,7 @@
 </ul>
 <h2 id='signature'><span id="a4">Signature</span></h2>
 <p>Generate a string to be signed
-    -   <a href="https://github.com/cobidex-doc/api/blob/master/demo/demo.java">open-api Demo</a></p>
+    -   <a href="https://github.com/cobidex-docs/exchange-api-docs/blob/main/demo/demo.java">open-api Demo</a> </p>
 
 <p>1、Sort the parameters in ascending order of their parameter names in lexicographic order</p>
 
@@ -551,7 +545,7 @@
 <li><p>Private interface: We limit the invocation of private interface via user ID: up to 6 requests every 2s.</p></li>
 <li><p>Special restrictions on specified interfaces are specified.</p></li>
 </ul>
-<h1 id='api-reference'><span id="b5"> API Reference</span></h1><h2 id='balance-of-assets'><span id="1">Balance of assets</span></h2>
+<h1 id='spot-api'><span id="b5"> Spot API</span></h1><h2 id='balance-of-assets'><span id="1">Balance of assets</span></h2>
 <ol>
 <li>Interface address: /open/api/user/account</li>
 <li>Interface specification: (get request)Balance of the assets</li>
@@ -741,45 +735,33 @@
 </code></pre></div>
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny</th>
-<th>cobidex-btc</th>
-<th>cobidex-usdt</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars</th>
+<th>cobidex-usdt pars</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 <td>btcusdt</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 <td>ethusdt</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 <td>ltcusdt</td>
 </tr>
 <tr>
-<td>bcc</td>
-<td>bcccny</td>
-<td>bccbtc</td>
-<td>bccusdt</td>
-</tr>
-<tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 <td>etcusdt</td>
 </tr>
 <tr>
 <td>usdt</td>
-<td>usdtcny</td>
 <td>-</td>
 <td>-</td>
 </tr>
@@ -923,45 +905,33 @@
 </code></pre></div>
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny</th>
-<th>cobidex-btc</th>
-<th>cobidex-usdt</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars</th>
+<th>cobidex-usdt pars</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 <td>btcusdt</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 <td>ethusdt</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 <td>ltcusdt</td>
 </tr>
 <tr>
-<td>bcc</td>
-<td>bcccny</td>
-<td>bccbtc</td>
-<td>bccusdt</td>
-</tr>
-<tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 <td>etcusdt</td>
 </tr>
 <tr>
 <td>usdt</td>
-<td>usdtcny</td>
 <td>-</td>
 <td>-</td>
 </tr>
@@ -969,7 +939,7 @@
 <h2 id='cancellation-of-the-order'><span id="4">Cancellation of the order</span></h2>
 <ol>
 <li>Interface address:/open/api/cancel_order</li>
-<li>Interface specification:(post Request) Cancellation of the Power of Attorney</li>
+<li>Interface specification:(post Request) Cancellation of all orders as per crypto currenty pars</li>
 </ol>
 
 <table><thead>
@@ -1034,34 +1004,24 @@
 
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny（cobidex101）</th>
-<th>cobidex-btc（cobidex201）</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars（cobidex201）</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 </tr>
 <tr>
-<td>bcc</td>
-<td>bcccny</td>
-<td>bccbtc</td>
-</tr>
-<tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 </tr>
 </tbody></table>
@@ -1128,34 +1088,24 @@
 
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny（cobidex101）</th>
-<th>cobidex-btc（cobidex201）</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars（cobidex201）</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 </tr>
 <tr>
-<td>bcc</td>
-<td>bcccny</td>
-<td>bccbtc</td>
-</tr>
-<tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 </tr>
 </tbody></table>
@@ -1247,34 +1197,24 @@
 
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny（cobidex101）</th>
-<th>cobidex-btc（cobidex201）</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars（cobidex201）</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 </tr>
 <tr>
-<td>bcc</td>
-<td>bcccny</td>
-<td>bccbtc</td>
-</tr>
-<tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 </tr>
 </tbody></table>
@@ -1401,39 +1341,33 @@
 
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny</th>
-<th>cobidex-btc</th>
-<th>cobidex-usdt</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars</th>
+<th>cobidex-usdt pars</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>bch</td>
-<td>bcccny</td>
 <td>bchbtc</td>
 <td>bchusdt</td>
 </tr>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 <td>btcusdt</td>
 </tr>
 <tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 <td>etcusdt</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 <td>ethusdt</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 <td>ltcusdt</td>
 </tr>
@@ -1553,39 +1487,28 @@
 </code></pre></div>
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny</th>
-<th>cobidex-btc</th>
-<th>cobidex-usdt</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars</th>
+<th>cobidex-usdt pars</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>bcc</td>
-<td>bcccny</td>
-<td>bccbtc</td>
-<td>bccusdt</td>
-</tr>
-<tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 <td>btcusdt</td>
 </tr>
 <tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 <td>etcusdt</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 <td>ethusdt</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 <td>ltcusdt</td>
 </tr>
@@ -1668,44 +1591,38 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny</th>
-<th>cobidex-btc</th>
-<th>cobidex-usdt</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars</th>
+<th>cobidex-usdt pars</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>bch</td>
-<td>bcccny</td>
 <td>bchbtc</td>
 <td>bchusdt</td>
 </tr>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 <td>btcusdt</td>
 </tr>
 <tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 <td>etcusdt</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 <td>ethusdt</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 <td>ltcusdt</td>
 </tr>
 </tbody></table>
-<h2 id='get-the-latest-transaction-price-of-each-pair-of-currencies'><span id="11">Get the latest transaction price of each pair of currencies</span></h2>
+<h2 id='get-the-latest-transaction-price-of-each-crypto-currency-pair'><span id="11">Get the latest transaction price of each crypto currency pair</span></h2>
 <ol>
 <li>Interface address:/open/api/market</li>
 <li>Interface specification:(getRequest) Get the latest transaction price of each pair of currencies</li>
@@ -1763,44 +1680,33 @@
 
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny</th>
-<th>cobidex-btc</th>
-<th>cobidex-usdt</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars</th>
+<th>cobidex-usdt pars</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 <td>btcusdt</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 <td>ethusdt</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 <td>ltcusdt</td>
 </tr>
 <tr>
-<td>bcc</td>
-<td>bcccny</td>
-<td>bccbtc</td>
-<td>bccusdt</td>
-</tr>
-<tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 <td>etcusdt</td>
 </tr>
 </tbody></table>
-<h2 id='search-the-depth-of-buying-and-selling'><span id="12">Search the depth of buying and selling</span></h2>
+<h2 id='search-the-depth-of-the-order-book'><span id="12">Search the depth of the order book</span></h2>
 <ol>
 <li>Interface address:/open/api/market_dept</li>
 <li>Interface specification:(getrequest)Search the depth of buying and selling</li>
@@ -1872,157 +1778,7 @@
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h2 id='batch-order-simultaneous-bulk-withdrawal-of-designated-orders'><span id="13">Batch order，Simultaneous bulk withdrawal of designated orders</span></h2>
-<ol>
-<li>Interface address:/open/api/mass_replace</li>
-<li>Interface specification:(postrequest)Place orders in batches and withdraw designated orders in batches</li>
-</ol>
-
-<ul>
-<li>mass_placeIt&#39;s a batch of limited price orders that need to be sent to the system, up to 100 at a time</li>
-<li>mass_cancelIt&#39;s a batch of orders that need to be withdrawn, up to 100 at a time</li>
-</ul>
-
-<table><thead>
-<tr>
-<th>parameter</th>
-<th>Fill in type</th>
-<th>Explain</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api_key</td>
-<td>Must fill</td>
-<td>api_key</td>
-</tr>
-<tr>
-<td>time</td>
-<td>Must fill</td>
-<td>time stamp</td>
-</tr>
-<tr>
-<td>sign</td>
-<td>Must fill</td>
-<td>autograph</td>
-</tr>
-<tr>
-<td>symbol</td>
-<td>Must fill</td>
-<td>currency ，example btcusdt</td>
-</tr>
-<tr>
-<td>mass_cancel</td>
-<td>Selective filling</td>
-<td>[1234,234....] Withdrawal parameters，Orderid</td>
-</tr>
-<tr>
-<td>mass_place</td>
-<td>Selective filling</td>
-<td>[{side:&quot;BUY&quot;,type:&quot;1&quot;,volume:&quot;0.01&quot;,price:&quot;6400&quot;,fee_is_user_cobidex_coin:&quot;0&quot;}, {}, …]<br>Meaning：<br>symbol:currency，example btcusdt<br>mass_place:Order parameter。side：direction（Direction of businessBUY、SELL），<br>--------------------------------type：type（1:limit order、2:market order）<br>--------------------------------volume：Purchase quantity（Polysemy，Multiplex field） type=1:Represents the quantity of sales and purchasestype=2:Buy means the total price，Selling represents the total number<br>--------------------------------price：Authorized unit price：type=2：No need for this parameter<br>--------------------------------fee_is_user_cobidex_coin：(Redundant fields) When the cobidex has a platform currency，This parameter indicates whether to use platform currency to pay handling fee, 0 no, 1 yes.</td>
-</tr>
-</tbody></table>
-
-<p>Return value:</p>
-
-<table><thead>
-<tr>
-<th>field</th>
-<th>Example</th>
-<th>explain</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr>
-<td>msg</td>
-<td>&quot;suc&quot;</td>
-<td>code&gt;0fail</td>
-</tr>
-<tr>
-<td>data</td>
-<td>&quot;mass_place&quot;: [{&quot;order_id&quot;:&quot;1234&quot;,&quot;code&quot;:&quot;0&quot;, &quot;msg&quot;:&quot;suc&quot;}，...]<br>&quot;mass_cancel&quot;: [{&quot;order_id&quot;:&quot;1234&quot;,&quot;code&quot;:&quot;0&quot;, &quot;msg&quot;:&quot;suc&quot;}，.......]</td>
-<td>Order return：Orderid，Status code，Success or Failure Information。<br>Withdrawal of returns：Orderid，Status code，c<br>0Express success。</td>
-</tr>
-</tbody></table>
-<h2 id='place-orders-in-batches-and-withdraw-designated-orders-in-batches-v2'><span id="27">Place orders in batches and withdraw designated orders in batches - V2</span></h2>
-<ol>
-<li>Interface address:/open/api/mass_replaceV2</li>
-<li>Interface specification:(postrequest)Place orders in batches and withdraw designated orders in batches</li>
-</ol>
-
-<ul>
-<li>mass_placeIt&#39;s a batch of limited price orders that need to be sent to the system, up to 1000 at a time</li>
-<li>mass_cancelIt&#39;s a batch of orders that need to be withdrawn, up to 1000 at a time</li>
-</ul>
-
-<table><thead>
-<tr>
-<th>parameter</th>
-<th>Fill in type</th>
-<th>Explain</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api_key</td>
-<td>Must fill</td>
-<td>api_key</td>
-</tr>
-<tr>
-<td>time</td>
-<td>Must fill</td>
-<td>time stamp</td>
-</tr>
-<tr>
-<td>sign</td>
-<td>Must fill</td>
-<td>autograph</td>
-</tr>
-<tr>
-<td>symbol</td>
-<td>Must fill</td>
-<td>currency ，example btcusdt</td>
-</tr>
-<tr>
-<td>mass_cancel</td>
-<td>Selective filling</td>
-<td>[1234,234....] Withdrawal parameters，Orderid</td>
-</tr>
-<tr>
-<td>mass_place</td>
-<td>Selective filling</td>
-<td>[{side:&quot;BUY&quot;,type:&quot;1&quot;,volume:&quot;0.01&quot;,price:&quot;6400&quot;,fee_is_user_cobidex_coin:&quot;0&quot;}, {}, …]<br>Meaning：<br>symbol:currency，example btcusdt<br>mass_place:Order parameter。side：direction（Direction of businessBUY、SELL），<br>--------------------------------type：type（1:limit order、2:market order）<br>--------------------------------volume：Purchase quantity（Polysemy，Multiplex field） type=1:Represents the quantity of sales and purchasestype=2:Buy means the total price，Selling represents the total number<br>--------------------------------price：Authorized unit price：type=2：No need for this parameter<br>--------------------------------fee_is_user_cobidex_coin：(Redundant fields) When the cobidex has a platform currency，This parameter indicates whether to use platform currency to pay handling fee, 0 no, 1 yes.</td>
-</tr>
-</tbody></table>
-
-<p>Return value:</p>
-
-<table><thead>
-<tr>
-<th>field</th>
-<th>Example</th>
-<th>explain</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr>
-<td>msg</td>
-<td>&quot;suc&quot;</td>
-<td>code&gt;0fail</td>
-</tr>
-<tr>
-<td>data</td>
-<td>&quot;mass_place&quot;: [{&quot;msg&quot;: &quot;Success&quot;,&quot;code&quot;: &quot;0&quot;,&quot;order_id&quot;: [504,505]},{&quot;msg&quot;: &quot;Order cancellation failed&quot;,&quot;code&quot;: &quot;8&quot;,&quot;order_id&quot;: [504,505]}]<br>&quot;mass_cancel&quot;: [{&quot;msg&quot;: &quot;Success&quot;,&quot;code&quot;: &quot;0&quot;,&quot;order_id&quot;: [572,573,574,626,629]}]</td>
-<td>Order return：Orderid，Status code，Success or Failure Information。<br>Withdrawal of returns：Orderid，Status code，c<br>0Express success。</td>
-</tr>
-</tbody></table>
-<h2 id='get-the-current-delegation'><span id="14">Get the current delegation</span></h2>
+</code></pre></div><h2 id='get-the-current-delegation'><span id="14">Get the current delegation</span></h2>
 <ol>
 <li>Interface address:/open/api/v2/new_order</li>
 <li>Interface specification:(getrequest)Get the current delegation（Including uncompleted and ongoing commissions）</li>
@@ -2143,45 +1899,33 @@
 </code></pre></div>
 <table><thead>
 <tr>
-<th>Virtual Currency Number</th>
-<th>cobidex-cny</th>
-<th>cobidex-btc</th>
-<th>cobidex-usdt</th>
+<th>Crypto currency symbol</th>
+<th>cobidex-btc pars</th>
+<th>cobidex-usdt pars</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>btc</td>
-<td>btccny</td>
 <td>-</td>
 <td>btcusdt</td>
 </tr>
 <tr>
 <td>eth</td>
-<td>ethcny</td>
 <td>ethbtc</td>
 <td>ethusdt</td>
 </tr>
 <tr>
 <td>ltc</td>
-<td>ltccny</td>
 <td>ltcbtc</td>
 <td>ltcusdt</td>
 </tr>
 <tr>
-<td>bcc</td>
-<td>bcccny</td>
-<td>bccbtc</td>
-<td>bccusdt</td>
-</tr>
-<tr>
 <td>etc</td>
-<td>etccny</td>
 <td>etcbtc</td>
 <td>etcusdt</td>
 </tr>
 <tr>
 <td>usdt</td>
-<td>usdtcny</td>
 <td>-</td>
 <td>-/web/new_order-Get the current delegate</td>
 </tr>
@@ -2366,7 +2110,7 @@
 <span class="p">}</span>
 <span class="p">]</span>
 <span class="p">}</span>
-</code></pre></div><h2 id='get-user-assets-and-recharge-records'><span id="18">Get user assets and recharge records</span></h2>
+</code></pre></div><h2 id='balance-and-deposit-records'><span id="18">Balance and deposit records</span></h2>
 <ol>
 <li>Interface address:/open/api/user_balance_info</li>
 <li>Interface Description:(postRequest) Get user assets and recharge records</li>
@@ -2752,7 +2496,7 @@
           <span class="ss">btcusdt: </span><span class="p">{</span><span class="ss">amount: </span><span class="s2">"999341.34124"</span><span class="p">,</span> <span class="ss">close: </span><span class="s2">"6450.18"</span><span class="p">,</span> <span class="ss">high: </span><span class="s2">"6486.39"</span><span class="p">,</span> <span class="ss">low: </span><span class="s2">"6359.63"</span><span class="p">,</span> <span class="ss">open: </span><span class="s2">"6435.79"</span><span class="p">,</span> <span class="err">…</span><span class="p">}</span>
    <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h1 id='ws-api-demo-java'><span id="ws-api-java">ws-api Demo (java) </span></h1><div class="highlight"><pre class="highlight mosel"><code>
+</code></pre></div><h1 id='demo-api-java'><span id="ws-api-java">Demo API (java) </span></h1><div class="highlight"><pre class="highlight mosel"><code>
 <span class="k">package</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="n">import</span> <span class="n">java</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">ByteArrayInputStream</span><span class="p">;</span>
@@ -2940,10 +2684,10 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><h1 id='contract'>Contract</h1><h2 id='public'>Public</h2><h3 id='security-none'>Security: None</h3>
+</code></pre></div><h1 id='futures-api'>Futures API</h1><h2 id='public'>Public</h2>
 <p>Endpoints under <strong>Public</strong> section can be accessed freely without requiring any API-key or signatures</p>
 <h3 id='test-connectivity'>Test Connectivity</h3>
-<p><strong>Get</strong>  <code>https://cobidexopenapi.cobidex.com/fapi/v1/ping</code></p>
+<p><strong>Get</strong>  <code>https://openapi.cobidex.com/fapi/v1/ping</code></p>
 
 <p>This endpoint checks connectivity to the host</p>
 
@@ -2952,7 +2696,7 @@
 <p>200: OK</p>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
 </code></pre></div><h3 id='check-server-time'>Check Server Time</h3>
-<p><strong>Get</strong> <code>https://cobidexopenapi.cobidex.com/fapi/v1/time</code></p>
+<p><strong>Get</strong> <code>https://openapi.cobidex.com/fapi/v1/time</code></p>
 
 <p><strong>Response</strong></p>
 
@@ -2983,8 +2727,8 @@
 <td>server time zone</td>
 </tr>
 </tbody></table>
-<h3 id='contract-list'>Contract List</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/contracts</code></p>
+<h3 id='future-list'>Future list</h3>
+<p><strong>GET</strong> <code>https://openapi.cobidex.com /fapi/v1/contracts</code></p>
 
 <p><strong>Response</strong></p>
 
@@ -3095,10 +2839,10 @@
 <td>Maximum valid order quantity</td>
 </tr>
 </tbody></table>
-<h2 id='market'>Market</h2><h3 id='security-none-2'>Security: None</h3>
+<h2 id='market'>Market</h2>
 <p>Market section can be accessed freely without requiring any API-key or signatures.</p>
 <h3 id='depth'>Depth</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/depth</code></p>
+<p><strong>GET</strong> <code>https://openapi.cobidex.com /fapi/v1/depth</code></p>
 
 <p><strong>Market depth data</strong></p>
 
@@ -3200,7 +2944,7 @@
 </tr>
 </tbody></table>
 <h3 id='24hrs-ticker'>24hrs ticker</h3>
-<p><strong>Get</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/ticker</code></p>
+<p><strong>Get</strong> <code>https://openapi.cobidex.com /fapi/v1/ticker</code></p>
 
 <p>24 hour price change statistics</p>
 
@@ -3277,7 +3021,7 @@
 </tr>
 </tbody></table>
 <h3 id='get-index-marked-price'>Get index/marked price</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/index</code></p>
+<p><strong>GET</strong> <code>https://openapi.cobidex.com /fapi/v1/index</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3342,7 +3086,7 @@
 </tr>
 </tbody></table>
 <h3 id='k-line-charts-data'>K line/charts data</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/klines</code></p>
+<p><strong>GET</strong> <code>https://openapi.cobidex.com /fapi/v1/klines</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3445,7 +3189,7 @@
 <h2 id='trading'>Trading</h2><h3 id='security-trade'>Security: TRADE</h3>
 <p>All interfaces under the transaction require signature and API-key verification</p>
 <h3 id='order-creation'>Order creation</h3>
-<p><strong>POST</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/order</code></p>
+<p><strong>POST</strong> <code>https://openapi.cobidex.com /fapi/v1/order</code></p>
 
 <p>Creation of single new orders</p>
 
@@ -3546,7 +3290,7 @@
 </tr>
 </tbody></table>
 <h3 id='cancel-order'>Cancel order</h3>
-<p><strong>POST</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/cancel</code></p>
+<p><strong>POST</strong> <code>https://openapi.cobidex.com /fapi/v1/cancel</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
@@ -3596,7 +3340,7 @@
     <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">256609229205684228</span>
 <span class="p">}</span>
 </code></pre></div><h3 id='order-details'>Order details</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/order</code></p>
+<p><strong>GET</strong> <code>https://openapi.cobidex.com /fapi/v1/order</code></p>
 
 <p><strong>Request</strong></p>
 
@@ -3705,7 +3449,7 @@
 </tr>
 </tbody></table>
 <h3 id='open-order'>Open order</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/openOrders</code></p>
+<p><strong>GET</strong> <code>https://openapi.cobidex.com /fapi/v1/openOrders</code></p>
 
 <p>Speed limit rules:</p>
 
@@ -3845,7 +3589,7 @@
 </tr>
 </tbody></table>
 <h3 id='order-record'>Order record</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/myTrades</code></p>
+<p><strong>GET</strong> <code>https://openapi.cobidex.com /fapi/v1/myTrades</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
@@ -4013,7 +3757,7 @@
 <h2 id='account'>Account</h2><h3 id='security-user_data'>Security: USER_DATA</h3>
 <p>All interfaces under the account require signature and API-key verification</p>
 <h3 id='account-info'>Account info</h3>
-<p><strong>GET</strong> <code>https://cobidexopenapi.cobidex.com /fapi/v1/account</code></p>
+<p><strong>GET</strong> <code>https://openapi.cobidex.com /fapi/v1/account</code></p>
 
 <p>Speed limit rules: 20 times/ 2 seconds</p>
 
