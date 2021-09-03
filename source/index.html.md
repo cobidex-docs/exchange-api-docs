@@ -35,7 +35,7 @@ Developers are recommended to use REST API to proceed spot trading and withdrawa
 
 ## <span id="a2">Generate an API Key</span>
 
-Before signing any request, you must generate an API key via [Cobidex’s official website ](https://www.cobidex.com/en_US/)【User Center】-【API】. After generating the key, there are three things you must bear in mind:
+Before signing any request, you must generate an API key on API management on users dashboard via cobidex website. After generating the key, there are three things you must bear in mind:
 
 - API Key
  
@@ -53,7 +53,7 @@ All REST requests must include the following headings:
 
 ## <span id="a4">Signature</span>
 Generate a string to be signed
-    -   [open-api Demo](https://github.com/cobidex-doc/api/blob/master/demo/demo.java)
+    -   [open-api Demo](https://github.com/cobidex-docs/exchange-api-docs/blob/main/demo/demo.java) 
     
 1、Sort the parameters in ascending order of their parameter names in lexicographic order
 
@@ -145,7 +145,7 @@ REST API
 - Special restrictions on specified interfaces are specified.
 
 
-# <span id="b5"> API Reference</span>
+# <span id="b5"> Spot API</span>
 
 ## <span id="1">Balance of assets</span>
 
@@ -245,14 +245,13 @@ Return value:
 }
 ```
 
-|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
-|----------|-------|-------|-------|
-|btc|	btccny|	-|	btcusdt|
-|eth|	ethcny|	ethbtc|	ethusdt|
-|ltc|	ltccny|	ltcbtc|	ltcusdt|
-|bcc|	bcccny|	bccbtc|	bccusdt|
-|etc|	etccny|	etcbtc|	etcusdt|
-|usdt|	usdtcny|	-|	-|
+|Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
+|----------|-------|-------|
+|btc|	-|	btcusdt|
+|eth|	ethbtc|	ethusdt|
+|ltc|	ltcbtc|	ltcusdt|
+|etc|	etcbtc|	etcusdt|
+|usdt|	-|	-|
 
 
 ## <span id="3">Obtain all transaction records</span>
@@ -332,21 +331,20 @@ Return value:
     ]
 }
 ```
-|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
-|----------|-------|-------|-------|
-|btc|	btccny|	-|	btcusdt|
-|eth|	ethcny|	ethbtc|	ethusdt|
-|ltc|	ltccny|	ltcbtc|	ltcusdt|
-|bcc|	bcccny|	bccbtc|	bccusdt|
-|etc|	etccny|	etcbtc|	etcusdt|
-|usdt|	usdtcny|	-|	-|
+|Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
+|----------|-------|-------|
+|btc|	-|	btcusdt|
+|eth|	ethbtc|	ethusdt|
+|ltc|	ltcbtc|	ltcusdt|
+|etc|	etcbtc|	etcusdt|
+|usdt|	-|	-|
 
 
 
 ##  <span id="4">Cancellation of the order</span>
 
 1. Interface address:/open/api/cancel_order
-2. Interface specification:(post Request) Cancellation of the Power of Attorney
+2. Interface specification:(post Request) Cancellation of all orders as per crypto currenty pars
 
 |parameter|	Fill in type|	Explain|
 |------------|--------|-----------------------------|
@@ -364,13 +362,12 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	“”|
 
-|Virtual Currency Number|cobidex-cny（cobidex101）|cobidex-btc（cobidex201）|
-|------------|--------|----------|
-|btc|	btccny|	-|
-|eth|	ethcny|	ethbtc|
-|ltc|	ltccny|	ltcbtc|
-|bcc|	bcccny|	bccbtc|
-|etc|	etccny|	etcbtc|
+|Crypto currency symbol|cobidex-btc pars（cobidex201）|
+|------------|----------|
+|btc|	-|
+|eth|	ethbtc|
+|ltc|	ltcbtc|
+|etc|	etcbtc|
 
 
 ##  <span id="5">Cancellation of all orders of attorney according to currency pair</span>
@@ -394,13 +391,12 @@ Return value:
 |data	|“”|
 
  
-|Virtual Currency Number|cobidex-cny（cobidex101）|cobidex-btc（cobidex201）|
-|------------|-----------|------------|
-|btc|	btccny|	-|
-|eth|	ethcny|	ethbtc|
-|ltc|	ltccny|	ltcbtc|
-|bcc|	bcccny|	bccbtc|
-|etc|	etccny|	etcbtc|
+|Crypto currency symbol|cobidex-btc pars（cobidex201）|
+|------------|------------|
+|btc|	-|
+|eth|	ethbtc|
+|ltc|	ltcbtc|
+|etc|	etcbtc|
 
 
 ## <span id="6">Create order</span>
@@ -429,13 +425,12 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	{"order_id":34343}|Successful return to the transactionID|
 
-|Virtual Currency Number|cobidex-cny（cobidex101）|cobidex-btc（cobidex201）|
-|------------|------------|------------|
-|btc|	btccny|	-|
-|eth|	ethcny|	ethbtc|
-|ltc|	ltccny|	ltcbtc|
-|bcc|	bcccny|	bccbtc|
-|etc|	etccny|	etcbtc|
+|Crypto currency symbol|cobidex-btc pars（cobidex201）|
+|------------|------------|
+|btc|	-|
+|eth|	ethbtc|
+|ltc|	ltcbtc|
+|etc|	etcbtc|
 
 
 ##  <span id="7">Get all trading pairs quotations on the market</span>
@@ -525,13 +520,13 @@ Return value:
 |symbol|	Must fill|	Market mark，bchbtc，See below for details|
 |period|	Must fill|	In minutes，The analogy is 1 in a minute，One day is1440|
 
-|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
-|------------|-----------|----------|----------|
-|bch|	bcccny|	bchbtc|	bchusdt|
-|btc|	btccny|	-|	btcusdt|
-|etc|	etccny|	etcbtc|	etcusdt|
-|eth|	ethcny|	ethbtc|	ethusdt|
-|ltc|	ltccny|	ltcbtc|	ltcusdt|
+|Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
+|------------|----------|----------|
+|bch|	bchbtc|	bchusdt|
+|btc|	-|	btcusdt|
+|etc|	etcbtc|	etcusdt|
+|eth|	ethbtc|	ethusdt|
+|ltc|	ltcbtc|	ltcusdt|
 
 Return value:
 
@@ -604,13 +599,12 @@ Return value:
     "time": 1514448473626
 }
 ```
-|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
-|------------|--------|----------|----------|
-|bcc|	bcccny|	bccbtc|	bccusdt|
-|btc|	btccny|	-|	btcusdt|
-|etc|	etccny|	etcbtc|	etcusdt|
-|eth|	ethcny|	ethbtc|	ethusdt|
-|ltc|	ltccny|	ltcbtc|	ltcusdt|
+|Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
+|------------|----------|----------|
+|btc|	-|	btcusdt|
+|etc|	etcbtc|	etcusdt|
+|eth|	ethbtc|	ethusdt|
+|ltc|	ltcbtc|	ltcusdt|
 
 
 
@@ -663,13 +657,13 @@ Return value:
         }
 ]
 ```
-|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
-|------------|--------|-----------|----------|
-|bch|	bcccny|	bchbtc|	bchusdt|
-|btc|	btccny|	-|	btcusdt|
-|etc|	etccny|	etcbtc|	etcusdt|
-|eth|	ethcny|	ethbtc|	ethusdt|
-|ltc|	ltccny|	ltcbtc|	ltcusdt|
+|Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
+|------------|-----------|----------|
+|bch|	bchbtc|	bchusdt|
+|btc|	-|	btcusdt|
+|etc|	etcbtc|	etcusdt|
+|eth|	ethbtc|	ethusdt|
+|ltc|	ltcbtc|	ltcusdt|
 
 
 
@@ -677,7 +671,7 @@ Return value:
 
 
 
-##  <span id="11">Get the latest transaction price of each pair of currencies</span>
+##  <span id="11">Get the latest transaction price of each crypto currency pair</span>
 
 
 1. Interface address:/open/api/market
@@ -697,17 +691,16 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	{"btcusdt":15000,"ethusdt":800}|
 
-|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
-|------------|--------|----------|----------|
-|btc|	btccny|	-|	btcusdt|
-|eth|	ethcny|	ethbtc|	ethusdt|
-|ltc|	ltccny|	ltcbtc|	ltcusdt|
-|bcc|	bcccny|	bccbtc|	bccusdt|
-|etc|	etccny|	etcbtc|	etcusdt|
+|Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
+|------------|----------|----------|
+|btc|	-|	btcusdt|
+|eth|	ethbtc|	ethusdt|
+|ltc|	ltcbtc|	ltcusdt|
+|etc|	etcbtc|	etcusdt|
 
 
 
-##  <span id="12">Search the depth of buying and selling</span>
+##  <span id="12">Search the depth of the order book</span>
 
 
 1. Interface address:/open/api/market_dept
@@ -747,65 +740,6 @@ Return value:
     }
 }
 ```
-
-
-
-
-
-## <span id="13">Batch order，Simultaneous bulk withdrawal of designated orders</span>
-
-
-1. Interface address:/open/api/mass_replace
-2. Interface specification:(postrequest)Place orders in batches and withdraw designated orders in batches
-
-* mass_placeIt's a batch of limited price orders that need to be sent to the system, up to 100 at a time
-* mass_cancelIt's a batch of orders that need to be withdrawn, up to 100 at a time
-
-|parameter|	Fill in type|	Explain|
-|------------|--------|--------------------------------------|
-|api_key|	Must fill|	api_key|
-|time|	Must fill|	time stamp|
-|sign|	Must fill|	autograph|
-|symbol|	Must fill|	currency ，example btcusdt|
-|mass_cancel|	Selective filling|	[1234,234....] Withdrawal parameters，Orderid|
-|mass_place|	Selective filling|	[{side:"BUY",type:"1",volume:"0.01",price:"6400",fee_is_user_cobidex_coin:"0"}, {}, …]<br>Meaning：<br>symbol:currency，example btcusdt<br>mass_place:Order parameter。side：direction（Direction of businessBUY、SELL），<br>--------------------------------type：type（1:limit order、2:market order）<br>--------------------------------volume：Purchase quantity（Polysemy，Multiplex field） type=1:Represents the quantity of sales and purchasestype=2:Buy means the total price，Selling represents the total number<br>--------------------------------price：Authorized unit price：type=2：No need for this parameter<br>--------------------------------fee_is_user_cobidex_coin：(Redundant fields) When the cobidex has a platform currency，This parameter indicates whether to use platform currency to pay handling fee, 0 no, 1 yes.|
-
-Return value:
-
-|field|	Example|	explain|
-|------------|--------|---------------|
-|code|	0|	 
-|msg|	"suc"|	code>0fail|
-|data|	"mass_place": [{"order_id":"1234","code":"0", "msg":"suc"}，...]<br>"mass_cancel": [{"order_id":"1234","code":"0", "msg":"suc"}，.......]|Order return：Orderid，Status code，Success or Failure Information。<br>Withdrawal of returns：Orderid，Status code，c<br>0Express success。|
-
-
-
-
-## <span id="27">Place orders in batches and withdraw designated orders in batches - V2</span>
-
-1. Interface address:/open/api/mass_replaceV2
-2. Interface specification:(postrequest)Place orders in batches and withdraw designated orders in batches
-
-* mass_placeIt's a batch of limited price orders that need to be sent to the system, up to 1000 at a time
-* mass_cancelIt's a batch of orders that need to be withdrawn, up to 1000 at a time
-
-|parameter|	Fill in type|	Explain|
-|------------|--------|--------------------------------------|
-|api_key|	Must fill|	api_key|
-|time|	Must fill|	time stamp|
-|sign|	Must fill|	autograph|
-|symbol|	Must fill|	currency ，example btcusdt|
-|mass_cancel|	Selective filling|	[1234,234....] Withdrawal parameters，Orderid|
-|mass_place|	Selective filling|	[{side:"BUY",type:"1",volume:"0.01",price:"6400",fee_is_user_cobidex_coin:"0"}, {}, …]<br>Meaning：<br>symbol:currency，example btcusdt<br>mass_place:Order parameter。side：direction（Direction of businessBUY、SELL），<br>--------------------------------type：type（1:limit order、2:market order）<br>--------------------------------volume：Purchase quantity（Polysemy，Multiplex field） type=1:Represents the quantity of sales and purchasestype=2:Buy means the total price，Selling represents the total number<br>--------------------------------price：Authorized unit price：type=2：No need for this parameter<br>--------------------------------fee_is_user_cobidex_coin：(Redundant fields) When the cobidex has a platform currency，This parameter indicates whether to use platform currency to pay handling fee, 0 no, 1 yes.|
-
-Return value:
-
-|field|	Example|	explain|
-|------------|--------|---------------|
-|code|	0|	 
-|msg|	"suc"|	code>0fail|
-|data|	"mass_place": [{"msg": "Success","code": "0","order_id": [504,505]},{"msg": "Order cancellation failed","code": "8","order_id": [504,505]}]<br>"mass_cancel": [{"msg": "Success","code": "0","order_id": [572,573,574,626,629]}]|Order return：Orderid，Status code，Success or Failure Information。<br>Withdrawal of returns：Orderid，Status code，c<br>0Express success。|
-
 
 
 ## <span id="14">Get the current delegation</span>
@@ -879,14 +813,13 @@ Return value:
     ]
 }
 ```
-|Virtual Currency Number|cobidex-cny|cobidex-btc|cobidex-usdt|
-|------------|--------|----------|----------|
-|btc|	btccny|	-|	btcusdt|
-|eth|	ethcny|	ethbtc|	ethusdt|
-|ltc|	ltccny|	ltcbtc|	ltcusdt|
-|bcc|	bcccny|	bccbtc|	bccusdt|
-|etc|	etccny|	etcbtc|	etcusdt|
-|usdt|	usdtcny|	-|	-/web/new_order-Get the current delegate|
+|Crypto currency symbol|cobidex-btc pars|cobidex-usdt pars|
+|------------|----------|----------|
+|btc|	-|	btcusdt|
+|eth|	ethbtc|	ethusdt|
+|ltc|	ltcbtc|	ltcusdt|
+|etc|	etcbtc|	etcusdt|
+|usdt|	-|	-/web/new_order-Get the current delegate|
 
 
 
@@ -1017,7 +950,7 @@ Return value:
 ```
 
 
-##  <span id="18">Get user assets and recharge records</span>
+##  <span id="18">Balance and deposit records</span>
 
 
 1. Interface address:/open/api/user_balance_info
@@ -1384,7 +1317,7 @@ Return value:
 ```
 
 
-# <span id="ws-api-java">ws-api Demo (java) </span>
+# <span id="ws-api-java">Demo API (java) </span>
 
 
 ```
@@ -1577,17 +1510,16 @@ public class WsTest {
 }
 
 ```
-# Contract
+# Futures API
 
 ## Public
 
-### Security: None
 
 Endpoints under **Public** section can be accessed freely without requiring any API-key or signatures
 
 ### Test Connectivity
 
-**Get**  `https://cobidexopenapi.cobidex.com/fapi/v1/ping`
+**Get**  `https://openapi.cobidex.com/fapi/v1/ping`
 
 This endpoint checks connectivity to the host
 
@@ -1600,7 +1532,7 @@ This endpoint checks connectivity to the host
 ```
 ### Check Server Time
 
-**Get** `https://cobidexopenapi.cobidex.com/fapi/v1/time`
+**Get** `https://openapi.cobidex.com/fapi/v1/time`
 
 **Response**
 
@@ -1617,9 +1549,9 @@ name | type | example | description
 serverTime | long | 1607702400000 |server timestamp
 timezone | string | China standard time | server time zone
 
-### Contract List
+### Future list
 
-**GET** `https://cobidexopenapi.cobidex.com /fapi/v1/contracts`
+**GET** `https://openapi.cobidex.com /fapi/v1/contracts`
 
 **Response**
 
@@ -1663,13 +1595,12 @@ maxValidOrder | number | 100000 | Maximum valid order quantity
 
 ## Market
 
-### Security: None
 
 Market section can be accessed freely without requiring any API-key or signatures.
 
 ### Depth
 
-**GET** `https://cobidexopenapi.cobidex.com /fapi/v1/depth`
+**GET** `https://openapi.cobidex.com /fapi/v1/depth`
 
 **Market depth data**
 
@@ -1727,7 +1658,7 @@ name | type | example | description
 
 ### 24hrs ticker
 
-**Get** `https://cobidexopenapi.cobidex.com /fapi/v1/ticker`
+**Get** `https://openapi.cobidex.com /fapi/v1/ticker`
 
 24 hour price change statistics
 
@@ -1766,7 +1697,7 @@ rose | string | +0.5 | Price variation
 
 ### Get index/marked price
 
-**GET** `https://cobidexopenapi.cobidex.com /fapi/v1/index`
+**GET** `https://openapi.cobidex.com /fapi/v1/index`
 
 **Request**
 
@@ -1799,7 +1730,7 @@ lastFundingRate | float | 0.123 | Current fund rate
 
 ### K line/charts data
 
-**GET** `https://cobidexopenapi.cobidex.com /fapi/v1/klines`
+**GET** `https://openapi.cobidex.com /fapi/v1/klines`
 
 **Request**
 
@@ -1861,7 +1792,7 @@ All interfaces under the transaction require signature and API-key verification
 
 ### Order creation
 
-**POST** `https://cobidexopenapi.cobidex.com /fapi/v1/order`
+**POST** `https://openapi.cobidex.com /fapi/v1/order`
 
 Creation of single new orders
 
@@ -1904,7 +1835,7 @@ orderId | String | 256609229205684228 | Order ID
 
 ### Cancel order
 
-**POST** `https://cobidexopenapi.cobidex.com /fapi/v1/cancel`
+**POST** `https://openapi.cobidex.com /fapi/v1/cancel`
 
 Speed limit rules: 20 times/ 2 seconds
 
@@ -1935,7 +1866,7 @@ contractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC
 
 ### Order details
 
-**GET** `https://cobidexopenapi.cobidex.com /fapi/v1/order`
+**GET** `https://openapi.cobidex.com /fapi/v1/order`
 
 
 **Request**
@@ -1984,7 +1915,7 @@ transactTime | long | 1607702400000 | Order creation time
 
 ###  Open order
 
-**GET** `https://cobidexopenapi.cobidex.com /fapi/v1/openOrders`
+**GET** `https://openapi.cobidex.com /fapi/v1/openOrders`
 
 Speed limit rules:
 
@@ -2043,7 +1974,7 @@ transactTime | long | 1607702400000 | Order creation time,
 
 ### Order record
 
-**GET** `https://cobidexopenapi.cobidex.com /fapi/v1/myTrades`
+**GET** `https://openapi.cobidex.com /fapi/v1/myTrades`
 
 Speed limit rules: 20 times/ 2 seconds
 
@@ -2111,7 +2042,7 @@ All interfaces under the account require signature and API-key verification
 
 ### Account info
 
-**GET** `https://cobidexopenapi.cobidex.com /fapi/v1/account`
+**GET** `https://openapi.cobidex.com /fapi/v1/account`
 
 Speed limit rules: 20 times/ 2 seconds
 
