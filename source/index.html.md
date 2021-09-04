@@ -245,7 +245,7 @@ Return value:
 }
 ```
 
-|Crypto currency symbol|cobidex-btc pairs|cobidex-usdt pairs|
+|symbol|cobidex-btc pairs|cobidex-usdt pairs|
 |----------|-------|-------|
 |btc|	-|	btcusdt|
 |eth|	ethbtc|	ethusdt|
@@ -331,7 +331,7 @@ Return value:
     ]
 }
 ```
-|Crypto currency symbol|cobidex-btc paris|cobidex-usdt paris|
+|symbol|cobidex-btc paris|cobidex-usdt paris|
 |----------|-------|-------|
 |btc|	-|	btcusdt|
 |eth|	ethbtc|	ethusdt|
@@ -362,7 +362,7 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	“”|
 
-|Crypto currency symbol|cobidex-btc pairs（cobidex201）|
+|symbol|cobidex-btc pairs（cobidex201）|
 |------------|----------|
 |btc|	-|
 |eth|	ethbtc|
@@ -391,7 +391,7 @@ Return value:
 |data	|“”|
 
  
-|Crypto currency symbol|cobidex-btc pairs（cobidex201）|
+|symbol|cobidex-btc pairs（cobidex201）|
 |------------|------------|
 |btc|	-|
 |eth|	ethbtc|
@@ -425,7 +425,7 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	{"order_id":34343}|Successful return to the transactionID|
 
-|Crypto currency symbol|cobidex-btc pairs（cobidex201）|
+|symbol|cobidex-btc pairs（cobidex201）|
 |------------|------------|
 |btc|	-|
 |eth|	ethbtc|
@@ -511,7 +511,7 @@ Return value:
 |symbol|	Must fill|	Market mark，See below for details|
 |period|	Must fill|	In minutes，The analogy is 1 in a minute，One day is1440|
 
-|Crypto currency symbol|cobidex-btc pairs|cobidex-usdt pairs|
+|symbol|cobidex-btc pairs|cobidex-usdt pairs|
 |------------|----------|----------|
 |btc|	-|	btcusdt|
 |etc|	etcbtc|	etcusdt|
@@ -589,7 +589,7 @@ Return value:
     "time": 1514448473626
 }
 ```
-|Crypto currency symbol|cobidex-btc paris|cobidex-usdt pairs|
+|symbol|cobidex-btc paris|cobidex-usdt pairs|
 |------------|----------|----------|
 |btc|	-|	btcusdt|
 |etc|	etcbtc|	etcusdt|
@@ -647,7 +647,7 @@ Return value:
         }
 ]
 ```
-|Crypto currency symbol|cobidex-btc pairs|cobidex-usdt pairs|
+|symbol|cobidex-btc pairs|cobidex-usdt pairs|
 |------------|-----------|----------|
 |btc|	-|	btcusdt|
 |etc|	etcbtc|	etcusdt|
@@ -680,7 +680,7 @@ Return value:
 |msg|	"suc"|	code>0fail|
 |data|	{"btcusdt":15000,"ethusdt":800}|
 
-|Crypto currency symbol|cobidex-btc pairs|cobidex-usdt pairs|
+|symbol|cobidex-btc pairs|cobidex-usdt pairs|
 |------------|----------|----------|
 |btc|	-|	btcusdt|
 |eth|	ethbtc|	ethusdt|
@@ -802,7 +802,7 @@ Return value:
     ]
 }
 ```
-|Crypto currency symbol|cobidex-btc pairs|cobidex-usdt pairs|
+|symbol|cobidex-btc pairs|cobidex-usdt pairs|
 |------------|----------|----------|
 |btc|	-|	btcusdt|
 |eth|	ethbtc|	ethusdt|
