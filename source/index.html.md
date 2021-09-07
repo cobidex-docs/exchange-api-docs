@@ -117,6 +117,7 @@ Cursor-based pagination allows results to be obtained before and after the curre
 
 **For example:**
 
+
 ```GET /orders?before=2&limit=30```
 
 
@@ -149,7 +150,7 @@ REST API
 
 ## <span id="1">Balance of assets</span>
 
-1. Interface address: /open/api/user/account
+1. Interface address: https://openapi.cobidex.com/open/api/user/account
 2. Interface specification: (get request)Balance of the assets
 
 
@@ -169,16 +170,16 @@ Return value:
 
 ## <span id="2">Acquire full delegation</span>
 
-1. Interface address:/open/api/v2/all_order
+1. Interface address: https://openapi.cobidex.com/open/api/v2/all_order
 2. Interface specification:(getrequest)Acquire full delegation
 3. startDate，endDate interval cannot exceed ten minutes
 4. No startDate, endDate, default first 10 minutes
 
-* Old interface/open/api/all_order It is still reserved, but not recommended
+* Old interface https://openapi.cobidex.com/open/api/all_order It is still reserved, but not recommended
 
 * v2Version change: Remove from the result return value tradeListTransaction record,Enhance efficiency;If transaction information for a single order is required
 
-you can use /open/api/order_info interface and check it
+you can use https://openapi.cobidex.com/open/api/order_info interface and check it
 
 |parameter|	Fill in type|	Explain|
 |------------|--------|-----------------------------|
@@ -256,7 +257,7 @@ Return value:
 
 ## <span id="3">Obtain all transaction records</span>
 
-1. Interface address:/open/api/all_trade
+1. Interface address: https://openapi.cobidex.com/open/api/all_trade
 2. Interface Description: (get request) Get all transaction records
 
 |parameter|	Fill in type|	Explain|
@@ -343,7 +344,7 @@ Return value:
 
 ##  <span id="4">Cancellation of the order</span>
 
-1. Interface address:/open/api/cancel_order
+1. Interface address: https://openapi.cobidex.com/open/api/cancel_order
 2. Interface specification:(post Request) Cancellation of all orders as per crypto currenty paris
 
 |parameter|	Fill in type|	Explain|
@@ -372,7 +373,7 @@ Return value:
 
 ##  <span id="5">Cancellation of all orders of attorney according to currency pair</span>
 
-1. Interface address:/open/api/cancel_order_all
+1. Interface address: https://openapi.cobidex.com/open/api/cancel_order_all
 2. Interface specification:(postrequest)Cancellation of all orders of attorney according to currency pair（Up to 2,000 cancellations, more than 2,000 please revoke）
 
 |parameter|	Fill in type|	Explain|
@@ -402,7 +403,7 @@ Return value:
 ## <span id="6">Create order</span>
 
 
-1. Interface address:/open/api/create_order
+1. Interface address: https://openapi.cobidex.com/open/api/create_order
 2. Interface specification:(post Request) Create an order
 
 |parameter|	Fill in type|	Explain|
@@ -434,7 +435,7 @@ Return value:
 
 
 ##  <span id="7">Get all trading pairs quotations on the market</span>
-1. Interface address:/open/api/get_allticker
+1. Interface address: https://openapi.cobidex.com/open/api/get_allticker
 2. Interface specification:(get Request) Get all trading pairs quotations on the market 
 
 * This interface does not perform signature verification
@@ -501,7 +502,7 @@ Return value:
 ## <span id="8">Getting K-line data</span>
 
 
-1. Interface address:/open/api/get_records
+1. Interface address: https://openapi.cobidex.com/open/api/get_records
 2. Interface specification:(get request)Getting K-line data
 
 * This interface does not perform signature verification
@@ -561,7 +562,7 @@ Return value:
 ##  <span id="9">Get the current market quotations</span>
 
 
-1. Interface address:/open/api/get_ticker
+1. Interface address: https://openapi.cobidex.com/open/api/get_ticker
 2. Interface specification:(get Request) to get the current market quotations 
 
 * This interface does not perform signature verification
@@ -603,7 +604,7 @@ Return value:
 
 ## <span id="10">Acquisition of Trading Records</span>
 
-1. Interface address:/open/api/get_trades
+1. Interface address: https://openapi.cobidex.com/open/api/get_trades
 2. Interface specification:(get Request) to obtain market transaction records
 
 * This interface does not perform signature verification
@@ -663,7 +664,7 @@ Return value:
 ##  <span id="11">Get the latest transaction price of each crypto currency pair</span>
 
 
-1. Interface address:/open/api/market
+1. Interface address: https://openapi.cobidex.com/open/api/market
 2. Interface specification:(getRequest) Get the latest transaction price of each pair of currencies
 
 |parameter|	Fill in type|	Explain|
@@ -692,7 +693,7 @@ Return value:
 ##  <span id="12">Search the depth of the order book</span>
 
 
-1. Interface address:/open/api/market_dept
+1. Interface address: https://openapi.cobidex.com/open/api/market_dept
 2. Interface specification:(getrequest)Search the depth of buying and selling
 
 * This interface does not perform signature verification
@@ -734,12 +735,12 @@ Return value:
 ## <span id="14">Get the current delegation</span>
 
 
-1. Interface address:/open/api/v2/new_order
+1. Interface address: https://openapi.cobidex.com/open/api/v2/new_order
 2. Interface specification:(getrequest)Get the current delegation（Including uncompleted and ongoing commissions）
 
-* Old interface /open/api/new_order It is still reserved, but not recommended
+* Old interface  https://openapi.cobidex.com/open/api/new_order It is still reserved, but not recommended
 
-* v2Version change: Remove the tradeList transaction record from the result return value to improve efficiency;If you need transaction information for a single order, you can use /open/api/order_info interface and check it
+* v2Version change: Remove the tradeList transaction record from the result return value to improve efficiency;If you need transaction information for a single order, you can use https://openapi.cobidex.com/open/api/order_info interface and check it
 
 |parameter|	Fill in type|	Explain|
 |------------|--------|--------------------------------------|
@@ -814,7 +815,7 @@ Return value:
 
 ##  <span id="15">Obtain order details</span>
 
-1. Interface address:/open/api/order_info
+1. Interface address: https://openapi.cobidex.com/open/api/order_info
 2. Interface specification:(getrequest)Obtain order details
 
 |parameter|	Fill in type|	Explain|
@@ -875,7 +876,7 @@ Return value:
 ## <span id="17">All Transaction Pairs and Accuracy Supported by Query System</span>
 
 
-1. Interface address:/open/api/common/symbols
+1. Interface address: https://openapi.cobidex.com/open/api/common/symbols
 2. Interface specification:(get request) query all transaction pairs and accuracy supported by the system
 
 * Parameter: None
@@ -935,7 +936,7 @@ Return value:
 ##  <span id="18">Balance and deposit records</span>
 
 
-1. Interface address:/open/api/user_balance_info
+1. Interface address: https://openapi.cobidex.com/open/api/user_balance_info
 2. Interface Description:(postRequest) Get user assets and recharge records
 
 |parameter|	Fill in type|	Explain|
@@ -1499,7 +1500,7 @@ Endpoints under **Public** section can be accessed freely without requiring any 
 
 ### Test Connectivity
 
-**Get**  `https://openapi.cobidex.com/fapi/v1/ping`
+**Get**  `https://futuresopenapi.cobidex.com/fapi/v1/ping`
 
 This endpoint checks connectivity to the host
 
@@ -1512,7 +1513,7 @@ This endpoint checks connectivity to the host
 ```
 ### Check Server Time
 
-**Get** `https://openapi.cobidex.com/fapi/v1/time`
+**Get** `https://futuresopenapi.cobidex.com/fapi/v1/time`
 
 **Response**
 
@@ -1531,7 +1532,7 @@ timezone | string | China standard time | server time zone
 
 ### Future list
 
-**GET** `https://openapi.cobidex.com /fapi/v1/contracts`
+**GET** `https://futuresopenapi.cobidex.com/fapi/v1/contracts`
 
 **Response**
 
@@ -1580,7 +1581,7 @@ Market section can be accessed freely without requiring any API-key or signature
 
 ### Depth
 
-**GET** `https://openapi.cobidex.com /fapi/v1/depth`
+**GET** `https://futuresopenapi.cobidex.com/fapi/v1/depth`
 
 **Market depth data**
 
@@ -1638,7 +1639,7 @@ name | type | example | description
 
 ### 24hrs ticker
 
-**Get** `https://openapi.cobidex.com /fapi/v1/ticker`
+**Get** `https://futuresopenapi.cobidex.com/fapi/v1/ticker`
 
 24 hour price change statistics
 
@@ -1677,7 +1678,7 @@ rose | string | +0.5 | Price variation
 
 ### Get index/marked price
 
-**GET** `https://openapi.cobidex.com /fapi/v1/index`
+**GET** `https://futuresopenapi.cobidex.com/fapi/v1/index`
 
 **Request**
 
@@ -1710,7 +1711,7 @@ lastFundingRate | float | 0.123 | Current fund rate
 
 ### K line/charts data
 
-**GET** `https://openapi.cobidex.com /fapi/v1/klines`
+**GET** `https://futuresopenapi.cobidex.com/fapi/v1/klines`
 
 **Request**
 
@@ -1772,7 +1773,7 @@ All interfaces under the transaction require signature and API-key verification
 
 ### Order creation
 
-**POST** `https://openapi.cobidex.com /fapi/v1/order`
+**POST** `https://futuresopenapi.cobidex.com/fapi/v1/order`
 
 Creation of single new orders
 
@@ -1815,7 +1816,7 @@ orderId | String | 256609229205684228 | Order ID
 
 ### Cancel order
 
-**POST** `https://openapi.cobidex.com /fapi/v1/cancel`
+**POST** `https://futuresopenapi.cobidex.com/fapi/v1/cancel`
 
 Speed limit rules: 20 times/ 2 seconds
 
@@ -1846,7 +1847,7 @@ contractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC
 
 ### Order details
 
-**GET** `https://openapi.cobidex.com /fapi/v1/order`
+**GET** `https://futuresopenapi.cobidex.com/fapi/v1/order`
 
 
 **Request**
@@ -1895,7 +1896,7 @@ transactTime | long | 1607702400000 | Order creation time
 
 ###  Open order
 
-**GET** `https://openapi.cobidex.com /fapi/v1/openOrders`
+**GET** `https://futuresopenapi.cobidex.com/fapi/v1/openOrders`
 
 Speed limit rules:
 
@@ -1954,7 +1955,7 @@ transactTime | long | 1607702400000 | Order creation time,
 
 ### Order record
 
-**GET** `https://openapi.cobidex.com /fapi/v1/myTrades`
+**GET** `https://futuresopenapi.cobidex.com/fapi/v1/myTrades`
 
 Speed limit rules: 20 times/ 2 seconds
 
@@ -2022,7 +2023,7 @@ All interfaces under the account require signature and API-key verification
 
 ### Account info
 
-**GET** `https://openapi.cobidex.com /fapi/v1/account`
+**GET** `https://futuresopenapi.cobidex.com/fapi/v1/account`
 
 Speed limit rules: 20 times/ 2 seconds
 
