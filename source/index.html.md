@@ -1845,6 +1845,61 @@ contractName <span id="reqd">REQUIRED</span> | string | Contract name E.g. E-BTC
 }
 ```
 
+### Profit loss order creation
+
+**POST** `https://futuresopenapi.cobidex.com/fapi/v1/profitLossOrder`
+
+**Request**
+
+Headers
+
+| X-CH-SIGN <span id="reqd">REQUIRED</span>       | string      | Signature        |
+| ----------------------------------------------- | ----------- | ---------------- |
+| **X-CH-APIKEY** <span id="reqd">REQUIRED</span> | **string**  | **Your API-key** |
+| **X-CH-TS** <span id="reqd">REQUIRED</span>     | **integer** | **Time stamp**   |
+
+Body Parameters
+
+| contractName <span id="reqd">REQUIRED</span>      | string      | Contract name E.g. E-BTC-USDT                                |
+| ------------------------------------------------- | ----------- | ------------------------------------------------------------ |
+| **side** <span id="reqd">REQUIRED</span>          | **string**  | **trade direction, BUY/SELL**                                |
+| **leverageLevel** <span id="reqd">REQUIRED</span> | **number**  |                                                              |
+| **positionType** <span id="reqd">REQUIRED</span>  | **number**  | **Position type (1 Full warehouse / 2 Warehouse by warehouse)** |
+| **contractName** <span id="reqd">REQUIRED</span>  | **string**  | **Contract name**                                            |
+| **orderList** <span id="reqd">REQUIRED</span>     | **Order[]** | **Order list**                                               |
+
+**Order:**
+
+```json
+{
+    "triggerType": 1,
+    "type": 1,
+    "price": "1.0",
+    "volume": "5.0",
+    "triggerPrice": "1.0"
+}
+```
+
+**Response:**
+
+200: OK
+
+```json
+{
+    "code": "0",
+    "msg": "success",
+    "succ": "",
+    "data": [
+        {
+            "ids": [
+                "12345"
+            ],
+            "cancelIds": "54321"
+        }
+    ]
+}
+```
+
 ### Order details
 
 **GET** `https://futuresopenapi.cobidex.com/fapi/v1/order`
